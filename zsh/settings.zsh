@@ -1,5 +1,5 @@
-export ZSH="/usr/local/google/home/mccloskeybr/.oh-my-zsh"
 ZSH_THEME="agnoster"
+ZSH_DISABLE_COMPFIX="true"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
