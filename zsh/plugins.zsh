@@ -1,6 +1,3 @@
-source $ZSH/oh-my-zsh.sh
-plugins=(git)
-
 # zplug
 # =====
 source ~/.zplug/init.zsh
@@ -29,6 +26,10 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
+
+# Oh-My-Zsh plugins
+# =================
+source $ZSH/oh-my-zsh.sh
 
 # Custom plugins
 # ==============
