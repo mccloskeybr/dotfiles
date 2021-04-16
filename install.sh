@@ -17,9 +17,9 @@ cd ~/.dotfiles
 cp ./zshrc ~/.zshrc
 cp ./vimrc ~/.vimrc
 cp ./hgrc ~/.hgrc
-cp ./vim/* ~/.vim
+cp -r ./vim/* ~/.vim
 cp ./zsh/* ~/.zsh
-cp ./iterm2/*
+cp ./iterm2/* ~/.iterm2
 
 source ~/.zshrc
 
