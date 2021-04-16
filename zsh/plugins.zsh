@@ -29,6 +29,7 @@ zplug load --verbose
 
 # Oh-My-Zsh plugins
 # =================
+plugins=(git mercurial)
 source $ZSH/oh-my-zsh.sh
 
 # Custom plugins
