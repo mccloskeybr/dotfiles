@@ -7,6 +7,8 @@ endif
 set undofile
 let &undodir=undo_dir
 
+syntax on
+
 set expandtab       " Use spaces, not tabs
 set tabstop=2       " tab is 2 spaces not 4
 set softtabstop=2
