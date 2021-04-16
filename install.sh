@@ -1,7 +1,7 @@
 echo "beginning install..."
 
 # install zplug
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/mccloskeybr/dotfiles/main/instal.sh | sh
 
 # install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -20,5 +20,7 @@ cp ./hgrc ~/.hgrc
 cp -r ./vim/* ~/.vim
 cp ./zsh/* ~/.zsh
 cp ./iterm2/* ~/.iterm2
+
+source ~/.zshrc
 
 echo "done."
