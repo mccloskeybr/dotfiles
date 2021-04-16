@@ -15,7 +15,7 @@ alias cp='cp -i'
 # grep
 alias grep='grep --color=auto'
 
-# fig
+# mercurial
 alias h=hg
 
 # plugins

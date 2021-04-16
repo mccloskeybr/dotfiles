@@ -4,22 +4,22 @@ nnoremap <Leader><space> :noh<CR>
 " Press // in visual mode to search selected text
 vnoremap // y/<C-R>"<CR>
 
-" Copy over ssh via ctrl-c.
+" copy over ssh via ctrl-c
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
 
-" Spell check
+" spell check
 nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
-" Nerdtree
+" nerd tree
 nnoremap <Leader>tr :NERDTreeToggle<CR>
 
-" Tagbar
+" tagbar
 nnoremap <Leader>tb :TagbarToggle<CR>
 
-" FZF
+" fzf
 nnoremap <Leader>f :FZF<space>
 
-" Tab remaps
+" tab remaps
 nnoremap <silent> H :silent :tabp<CR>
 nnoremap <silent> L :silent :tabn<CR>
 nnoremap <Leader>1 1gt
@@ -32,6 +32,6 @@ nnoremap <Leader>7 7gt
 nnoremap <Leader>8 8gt
 nnoremap <Leader>t :tabnew<CR>
 
-" Vsplit
+" vsplit
 nnoremap <Leader>v :vsplit<space>
 
