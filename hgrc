@@ -1,0 +1,78 @@
+[google]
+mail.default-rev=chain
+presubmit.default-rev=chain
+changes.autoresolve=true
+
+[ui]
+paginate = False
+
+[alias]
+# change
+ua = uploadall
+ac = ! $HG amend && $HG uploadchain
+av = ! $HG amend && $HG evolve
+avc = ! $HG amend && $HG evolve && $HG uploadchain
+ava = ! $HG amend && $HG evolve && $HG uploadall
+rw = reword
+
+# checkout
+u = up
+t = up tip
+n = next
+p = previous
+
+# commit
+c = commit
+cm = commit -m
+
+# critique
+m = mail
+kill = cls-drop --prune
+pd = presubmit --detach
+pid = presubmit --ignore-presubmit-warnings --detach
+ss = ! $HG submit && $HG sync
+sd = submit -d
+lc = ! $HG cls | grep -Po "^http://cl/\K\d+$" # List CLs numbers
+
+# diff
+d4 = diff --rev p4head
+dc = diff --change
+dx = diff --change .
+de = diffexported
+dex = ! $HG diffexported $($HG slx)
+
+# evolve
+ec = evolve --continue
+
+# files
+ar = addremove
+
+# help
+h = help
+
+# histedit
+he = histedit
+
+# log
+xs = xl --stat
+
+# rebase
+rc = rebase --continue
+
+# resolve
+ra = resolve --mark --all
+
+# revert
+revert = revert --backup
+r = revert --backup
+r1 = revert --backup --rev .^
+r4 = revert --backup --rev p4head
+re = revert --backup --rev 'exported(.)'
+
+# status
+s = status
+
+# sync
+sy = sync
+
+%include ~/.hgrc_local
