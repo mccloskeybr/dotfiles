@@ -1,4 +1,4 @@
-my dotfiles, should be good for both linux and OSX. just run the install shell script and should be good to go.
+my dotfiles, primarily for OSX but should also work on linux. just run the install shell script.
 
 ```
 wget https://github.com/mccloskeybr/dotfiles/install.sh | sh
