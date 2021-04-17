@@ -4,6 +4,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-jp/cpp-vim'                               " cpp syntax, highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'             " /enhanced/ highlighting :)
+Plugin 'prabirshrestha/async.vim'                     " async base
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'          " async lsp
+Plugin 'prabirshrestha/asyncomplete-ultisnips.vim'    " async ultisnips
+Plugin 'prabirshrestha/asyncomplete.vim'              " async autocomplete
+Plugin 'prabirshrestha/vim-lsp'                       " lsp pair
 Plugin 'SirVer/ultisnips'                             " snippets
 Plugin 'JamshedVesuna/vim-markdown-preview'           " markdown preview
 Plugin 'Yggdroot/indentLine'                          " show indent pairings
@@ -34,6 +39,13 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 let g:cpp_concepts_highlight = 1
+
+" async
+let g:lsp_async_completion = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_document_code_action_signs_enabled = 0
+let g:asyncomplete_auto_popup = 1
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"

@@ -26,6 +26,8 @@ set laststatus=2    " always display status line
 set number          " numbered lines
 set ruler           " show current row, col, etc
 set mouse=a         " mouse isn't useless
+set splitbelow      " preview window at bottom
+set pumheight=15    " pop up height
 set ttyfast         " smooth redraw
 
 set scrolloff=5     " n lines to show past relevancy
