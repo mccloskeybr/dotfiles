@@ -8,6 +8,10 @@ Plugin 'prabirshrestha/async.vim'                     " async base
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'          " async lsp
 Plugin 'prabirshrestha/asyncomplete-ultisnips.vim'    " async ultisnips
 Plugin 'prabirshrestha/asyncomplete.vim'              " async autocomplete
+Plugin 'easymotion/vim-easymotion'                    " line hopping
+Plugin 'haya14busa/incsearch.vim'                     " better incsearch
+Plugin 'haya14busa/incsearch-fuzzy.vim'               " fuzzy search
+Plugin 'haya14busa/incsearch-easymotion.vim'          " easymotion x incsearch
 Plugin 'prabirshrestha/vim-lsp'                       " lsp pair
 Plugin 'SirVer/ultisnips'                             " snippets
 Plugin 'JamshedVesuna/vim-markdown-preview'           " markdown preview
@@ -61,6 +65,27 @@ let g:indentLine_fileTypeExclude=['startify']
 " vim-better-whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+
+" incsearch.vim x fuzzy x vim-easymotion
+function! Config_incsearch(...) abort
+  return incsearch#util#deepextend(deepcopy({
+  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+  \   'keymap': {
+  \     "\<CR>": '<Over>(easymotion)'
+  \   },
+  \   'is_expr': 0
+  \ }), get(a:, 1, {}))
+endfunction
+
+function! Config_easyfuzzymotion(...) abort
+  return extend(copy({
+  \   'converters': [incsearch#config#fuzzy#converter()],
+  \   'modules': [incsearch#config#easymotion#module()],
+  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+  \   'is_expr': 0,
+  \   'is_stay': 1
+  \ }), get(a:, 1, {}))
+endfunction
 
 " fzf
 let g:fzf_action = {

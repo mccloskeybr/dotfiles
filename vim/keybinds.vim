@@ -19,6 +19,12 @@ nnoremap <Leader>tb :TagbarToggle<CR>
 " fzf
 nnoremap <Leader>f :FZF<space>
 
+" easymotion
+noremap <silent><expr> /  incsearch#go(Config_incsearch())
+noremap <silent><expr> ?  incsearch#go(Config_incsearch({'command': '?'}))
+noremap <silent><expr> g/ incsearch#go(Config_incsearch({'is_stay': 1}))
+noremap <silent><expr> <Space>/ incsearch#go(Config_easyfuzzymotion())
+
 " tab remaps
 nnoremap <silent> H :silent :tabp<CR>
 nnoremap <silent> L :silent :tabn<CR>
