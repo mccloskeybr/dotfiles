@@ -32,6 +32,8 @@ set ttyfast         " smooth redraw
 
 set scrolloff=5     " n lines to show past relevancy
 
+set completeopt=menuone,noinsert,noselect,preview
+
 syntax on
 
 " swp file saved

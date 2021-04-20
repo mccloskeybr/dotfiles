@@ -5,6 +5,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-jp/cpp-vim'                               " cpp syntax, highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'             " /enhanced/ highlighting :)
 Plugin 'prabirshrestha/async.vim'                     " async base
+Plugin 'prabirshrestha/vim-lsp'                       " base lsp
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'          " async lsp
 Plugin 'prabirshrestha/asyncomplete-ultisnips.vim'    " async ultisnips
 Plugin 'prabirshrestha/asyncomplete.vim'              " async autocomplete
@@ -12,7 +13,6 @@ Plugin 'easymotion/vim-easymotion'                    " line hopping
 Plugin 'haya14busa/incsearch.vim'                     " better incsearch
 Plugin 'haya14busa/incsearch-fuzzy.vim'               " fuzzy search
 Plugin 'haya14busa/incsearch-easymotion.vim'          " easymotion x incsearch
-Plugin 'prabirshrestha/vim-lsp'                       " lsp pair
 Plugin 'SirVer/ultisnips'                             " snippets
 Plugin 'JamshedVesuna/vim-markdown-preview'           " markdown preview
 Plugin 'Yggdroot/indentLine'                          " show indent pairings
@@ -50,6 +50,9 @@ let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_document_code_action_signs_enabled = 0
 let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
