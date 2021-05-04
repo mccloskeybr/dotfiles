@@ -10,7 +10,6 @@ export LESS='-M'
 
 export KEYTIMEOUT=20
 
-ZSH_THEME="agnoster"
 ZSH_DISABLE_COMPFIX="true"
 
 PATH=$PATH:$HOME/bin

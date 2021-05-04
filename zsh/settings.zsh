@@ -1,3 +1,6 @@
+# set theme to agnoster
+source ~/.zsh/themes/agnoster.zsh-theme
+
 # ignore dupe hist entries
 setopt hist_ignore_all_dups
 

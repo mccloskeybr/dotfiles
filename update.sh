@@ -21,6 +21,7 @@ cp ~/.zsh/aliases.zsh ./zsh/aliases.zsh
 cp ~/.zsh/settings.zsh ./zsh/settings.zsh
 cp ~/.zsh/plugins.zsh ./zsh/plugins.zsh
 cp -r ~/.zsh/custom_plugins/* ./zsh/custom_plugins/
+cp -r ~/.zsh/themes/* ./zsh/themes/
 
 cp ~/.iterm2/* ./iterm2/
 
