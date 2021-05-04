@@ -27,12 +27,9 @@ fi
 
 zplug load --verbose
 
-# go ahead and load zsh here too
-source $ZSH/oh-my-zsh.sh
-
 # custom plugins
 # ==============
 # requires sqlite3
 # use drewis/go-histdbimport to import existing history
-source ~/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
+source ~/.zsh/custom_plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook

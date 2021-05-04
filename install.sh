@@ -20,7 +20,7 @@ cp ./zshrc ~/.zshrc
 cp ./vimrc ~/.vimrc
 cp ./hgrc ~/.hgrc
 cp -r ./vim/* ~/.vim
-cp ./zsh/* ~/.zsh
+cp -r ./zsh/* ~/.zsh
 cp ./iterm2/* ~/.iterm2
 
 source ~/.zshrc
