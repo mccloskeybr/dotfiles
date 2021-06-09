@@ -20,4 +20,3 @@ PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
-PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.6/bin/

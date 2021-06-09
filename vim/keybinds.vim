@@ -7,6 +7,12 @@ vnoremap // y/<C-R>"<CR>
 " copy over ssh via ctrl-c
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
 
+" Lsp
+nnoremap <Leader>vj :vsplit<CR>:LspDefinition<CR>
+nnoremap <Leader>sj :split<CR>:LspDefinition<CR>
+nnoremap <Leader>jr :LspReferences<CR>
+nnoremap <Leader>c :LspCodeAction<CR>
+
 " spell check
 nnoremap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
