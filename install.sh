@@ -13,15 +13,19 @@ git clone https://github.com/mccloskeybr/dotfiles ~/.dotfiles
 
 mkdir ~/.vim
 mkdir ~/.zsh
+mkdir ~/.tmux
 mkdir ~/.iterm2
 
 cd ~/.dotfiles
 cp ./zshrc ~/.zshrc
 cp ./vimrc ~/.vimrc
 cp ./hgrc ~/.hgrc
+cp ./tmux.conf ~/.tmux.conf
+cp ./iterm2/* ~/.iterm2
+
 cp -r ./vim/* ~/.vim
 cp -r ./zsh/* ~/.zsh
-cp ./iterm2/* ~/.iterm2
+cp -r ./tmux/* ~/.tmux
 
 source ~/.zshrc
 
