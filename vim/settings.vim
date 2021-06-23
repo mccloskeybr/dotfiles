@@ -2,6 +2,7 @@ set nocompatible
 
 set encoding=utf-8
 set t_Co=256
+set background=dark
 
 set expandtab       " use spaces, not tabs
 set tabstop=2       " tab is 2 spaces not 4
