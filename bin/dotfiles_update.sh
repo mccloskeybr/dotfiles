@@ -24,6 +24,7 @@ cp -r ~/.zsh/themes/* ~/.dotfiles/zsh/themes/
 
 cp ~/.tmux/settings.conf ~/.dotfiles/tmux/settings.conf
 cp ~/.tmux/mappings.conf ~/.dotfiles/tmux/mappings.conf
+cp ~/.tmux/plugins.conf ~/.dotfiles/tmux/plugins.conf
 cp -r ~/.tmux/plugins/* ~/.dotfiles/tmux/plugins/
 
 cp ~/.iterm2/* ~/.dotfiles/iterm2/
