@@ -7,6 +7,7 @@ mkdir ~/.vim
 mkdir ~/.zsh
 mkdir ~/.tmux
 mkdir ~/.iterm2
+mkdir ~/bin
 
 # install zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -30,6 +31,7 @@ cp ./iterm2/* ~/.iterm2
 cp -r ./vim/* ~/.vim
 cp -r ./zsh/* ~/.zsh
 cp -r ./tmux/* ~/.tmux
+cp -r ./bin/* ~/bin
 
 source ~/.zshrc
 

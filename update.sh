@@ -30,4 +30,6 @@ cp -r ~/.tmux/plugins/* ./tmux/plugins/
 
 cp ~/.iterm2/* ./iterm2/
 
+cp -r ~/bin/* ./bin/
+
 echo "done."
