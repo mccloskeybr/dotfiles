@@ -7,4 +7,4 @@ if [ -f ~/.zsh/local.zsh ]; then
     source ~/.zsh/local.zsh
 fi
 
-source ~/bin/startup.sh
+sh ~/bin/startup.sh
