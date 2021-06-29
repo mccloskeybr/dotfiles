@@ -1,0 +1,6 @@
+# bin scripts need to be whitelisted
+bin/*
+bin/*/
+!bin/dotfiles_install.sh
+!bin/dotfiles_update.sh
+!bin/startup.sh
