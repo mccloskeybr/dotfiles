@@ -5,7 +5,7 @@ nnoremap <Leader><space> :noh<CR>
 vnoremap // y/<C-R>"<CR>
 
 " copy over ssh via ctrl-c
-vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
+vmap <C-c> y:call SendViaOSC52(getreg('"'))<CR>
 
 " Lsp
 nnoremap <Leader>vj :vsplit<CR>:LspDefinition<CR>
@@ -23,7 +23,7 @@ nnoremap <Leader>tr :NERDTreeToggle<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
 
 " fzf
-nnoremap <Leader>f :FZF<space>
+nnoremap <Leader>f :FZF<CR>
 
 " easymotion
 noremap <silent><expr> /  incsearch#go(Config_incsearch())
@@ -44,6 +44,7 @@ nnoremap <Leader>7 7gt
 nnoremap <Leader>8 8gt
 nnoremap <Leader>t :tabnew<CR>
 
-" vsplit
-nnoremap <Leader>v :vsplit<space>
+" splits
+nnoremap <Leader>v :vsplit<CR>
+nnoremap <Leader>h :split<CR>
 
