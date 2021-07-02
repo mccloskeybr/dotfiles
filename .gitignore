@@ -1,3 +1,8 @@
+# don't include local configs
+*local.vim
+*local.zsh
+*hgrc_local
+
 # bin scripts need to be whitelisted
 bin/*
 bin/*/
