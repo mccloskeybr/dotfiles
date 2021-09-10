@@ -33,3 +33,6 @@ zplug load --verbose
 # use drewis/go-histdbimport to import existing history
 source ~/.zsh/custom_plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
+
+# load fzf binds
+source ~/.fzf.zsh
