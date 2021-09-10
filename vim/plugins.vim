@@ -22,8 +22,8 @@ Plugin 'ntpeters/vim-better-whitespace'               " trailing whitespace
 Plugin 'mg979/vim-visual-multi'                       " multi cursor
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy file search
 Plugin 'junegunn/fzf.vim'                             " fzf vim
+Plugin 'ctrlpvim/ctrlp.vim'                           " fuzzy, ctrlp
 Plugin 'preservim/nerdcommenter'                      " smart comments
-Plugin 'preservim/nerdtree'                           " file tree
 Plugin 'vim-airline/vim-airline'                      " status line
 Plugin 'vim-airline/vim-airline-themes'               " status line themes
 Plugin 'mhinz/vim-signify'                            " visible hg changes
@@ -31,6 +31,7 @@ Plugin 'mhinz/vim-startify'                           " vim start screen
 Plugin 'tpope/vim-fugitive'                           " git wrapper
 Plugin 'whatyouhide/vim-lengthmatters'                " highlight overly-long lines
 Plugin 'preservim/tagbar'                             " class outline
+
 
 call vundle#end()
 
@@ -95,13 +96,13 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-v': 'vsplit' }
 
+" ctrlp
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_use_caching=0
+let g:ctrlp_cmd = 'call CdLocalRoot()<CR>:CtrlP'
+
 " nerdcommenter
 let g:NERDSpaceDelims = 1
-
-" nerdtree
-" load nerdtree by default in empty vim instance
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 " signify
 let g:signify_update_on_focusgained = 1

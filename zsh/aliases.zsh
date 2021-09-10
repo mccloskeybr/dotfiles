@@ -10,5 +10,7 @@ alias grep='grep --color=auto'
 alias h=hg
 alias v=vim
 
+alias notes=vim ~/notes.txt
+
 alias history=histdb
 
