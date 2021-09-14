@@ -32,7 +32,7 @@ Plugin 'mhinz/vim-startify'                           " vim start screen
 Plugin 'tpope/vim-fugitive'                           " git wrapper
 Plugin 'whatyouhide/vim-lengthmatters'                " highlight overly-long lines
 Plugin 'preservim/tagbar'                             " class outline
-
+Plugin 'machakann/vim-highlightedyank'                " highlighted yank
 
 call vundle#end()
 
