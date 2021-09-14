@@ -24,6 +24,7 @@ Plugin 'mg979/vim-visual-multi'                       " multi cursor
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy file search
 Plugin 'junegunn/fzf.vim'                             " fzf vim
 Plugin 'ctrlpvim/ctrlp.vim'                           " fuzzy, ctrlp
+Plugin 'FelikZ/ctrlp-py-matcher'                      " fast ctrl p
 Plugin 'preservim/nerdcommenter'                      " smart comments
 Plugin 'vim-airline/vim-airline'                      " status line
 Plugin 'vim-airline/vim-airline-themes'               " status line themes
@@ -105,9 +106,36 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " ctrlp
+function! MyCtrlP()
+  let l:local_pwd = GetLocalRoot()
+  if l:local_pwd == ""
+    let g:ctrlp_working_path_mode = 'ra'
+  else
+    exec "cd " . l:local_pwd
+    let g:ctrlp_working_path_mode = ''
+  endif
+  :CtrlP
+endfunction
+
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+elseif executable('ag')
+  let g:ctrlp_user_command = 'ag --literal --files-with-matches --nocolor --hidden -g "" %s'
+else
+  let g:ctrlp_user_command = {
+      \ 'types': {
+          \ 1: ['.git/', 'cd %s && git ls-files -oc --exclude-standard'],
+          \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+      \ },
+      \ 'fallback': 'find %s -type f'
+  \ }
+endif
+
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_use_caching=0
-let g:ctrlp_cmd = 'call CdLocalRoot()<CR>:CtrlP'
+let g:ctrlp_cmd = 'call MyCtrlP()'
+let g:ctrlp_match_window = 'max:20'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
