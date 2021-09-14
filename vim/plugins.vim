@@ -14,6 +14,7 @@ Plugin 'haya14busa/incsearch.vim'                     " better incsearch
 Plugin 'haya14busa/incsearch-fuzzy.vim'               " fuzzy search
 Plugin 'haya14busa/incsearch-easymotion.vim'          " easymotion x incsearch
 Plugin 'SirVer/ultisnips'                             " snippets
+Plugin 'honza/vim-snippets'                           " snippets package
 Plugin 'JamshedVesuna/vim-markdown-preview'           " markdown preview
 Plugin 'Yggdroot/indentLine'                          " show indent pairings
 Plugin 'Valloric/MatchTagAlways'                      " highlight matching tags
@@ -56,9 +57,16 @@ let g:asyncomplete_auto_completeopt = 0
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " ultisnips
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+if has('python3')
+  let g:UltiSnipsExpandTrigger = "<Tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+  call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+        \ 'name': 'ultisnips',
+        \ 'allowlist': ['*'],
+        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+        \ }))
+endif
 
 " indentLine
 let g:indentLine_char='|'
