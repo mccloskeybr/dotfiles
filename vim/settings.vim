@@ -49,3 +49,5 @@ endif
 set undofile
 let &undodir=undo_dir
 
+" start vim with these cmds
+autocmd VimEnter * Minimap

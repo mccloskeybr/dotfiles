@@ -31,6 +31,10 @@ noremap <silent><expr> ?  incsearch#go(Config_incsearch({'command': '?'}))
 noremap <silent><expr> g/ incsearch#go(Config_incsearch({'is_stay': 1}))
 noremap <silent><expr> <Space>/ incsearch#go(Config_easyfuzzymotion())
 
+" smooth scroll
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+
 " tab remaps
 nnoremap <silent> H :silent :tabp<CR>
 nnoremap <silent> L :silent :tabn<CR>
@@ -47,4 +51,3 @@ nnoremap <Leader>t :tabnew<CR>
 " splits
 nnoremap <Leader>v :vsplit<CR>
 nnoremap <Leader>h :split<CR>
-

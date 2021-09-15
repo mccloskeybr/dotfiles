@@ -10,6 +10,7 @@ Plugin 'prabirshrestha/asyncomplete-lsp.vim'          " async lsp
 Plugin 'prabirshrestha/asyncomplete-ultisnips.vim'    " async ultisnips
 Plugin 'prabirshrestha/asyncomplete.vim'              " async autocomplete
 Plugin 'easymotion/vim-easymotion'                    " line hopping
+Plugin 'google/vim-searchindex'                       " index search results
 Plugin 'haya14busa/incsearch.vim'                     " better incsearch
 Plugin 'haya14busa/incsearch-fuzzy.vim'               " fuzzy search
 Plugin 'haya14busa/incsearch-easymotion.vim'          " easymotion x incsearch
@@ -23,6 +24,7 @@ Plugin 'ntpeters/vim-better-whitespace'               " trailing whitespace
 Plugin 'mg979/vim-visual-multi'                       " multi cursor
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy file search
 Plugin 'junegunn/fzf.vim'                             " fzf vim
+Plugin 'junegunn/vim-peekaboo'                        " show contents of registers
 Plugin 'ctrlpvim/ctrlp.vim'                           " fuzzy, ctrlp
 Plugin 'FelikZ/ctrlp-py-matcher'                      " fast ctrl p
 Plugin 'preservim/nerdcommenter'                      " smart comments
@@ -30,10 +32,15 @@ Plugin 'vim-airline/vim-airline'                      " status line
 Plugin 'vim-airline/vim-airline-themes'               " status line themes
 Plugin 'mhinz/vim-signify'                            " visible hg changes
 Plugin 'mhinz/vim-startify'                           " vim start screen
+Plugin 'severin-lemaignan/vim-minimap'                " vim minimap
 Plugin 'tpope/vim-fugitive'                           " git wrapper
+Plugin 'tpope/vim-sensible'                           " sensible defaults
 Plugin 'whatyouhide/vim-lengthmatters'                " highlight overly-long lines
 Plugin 'preservim/tagbar'                             " class outline
 Plugin 'machakann/vim-highlightedyank'                " highlighted yank
+Plugin 'osyo-manga/vim-over'                          " show substitutes
+Plugin 'vimwiki/vimwiki'                              " vim wiki
+Plugin 'terryma/vim-smooth-scroll'                    " sensible scroll speeds
 
 call vundle#end()
 
