@@ -168,3 +168,7 @@ let g:signify_update_on_focusgained = 1
 let g:tagbar_width = 75
 let g:tagbar_autoclose = 1
 
+" vimwiki
+" don't let vimwiki commandeer all markdown files
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
+let g:vimwiki_ext2syntax = {'.wiki': 'markdown'}
