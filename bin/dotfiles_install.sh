@@ -10,7 +10,7 @@ mkdir ~/.profiles
 mkdir ~/bin
 
 # apt-get packages
-sudo apt-get install cmake python3 pip fonts-powerline
+sudo apt-get install cmake ctags python3 pip fonts-powerline
 
 # install zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

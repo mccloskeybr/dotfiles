@@ -13,6 +13,4 @@ sh update.sh
 
 Also need to install (todo, include in auto-installer):
 
-*   ctags (vim, TagBar)
 *   sqlite3 (zsh, histdb)
-*   pygmentize (zsh, colorize)
