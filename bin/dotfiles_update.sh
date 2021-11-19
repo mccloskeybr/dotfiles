@@ -27,7 +27,7 @@ cp ~/.tmux/mappings.conf ~/.dotfiles/tmux/mappings.conf
 cp ~/.tmux/plugins.conf ~/.dotfiles/tmux/plugins.conf
 cp -r ~/.tmux/plugins/* ~/.dotfiles/tmux/plugins/
 
-cp ~/.iterm2/* ~/.dotfiles/iterm2/
+cp ~/.profiles/* ~/.dotfiles/profiles/
 
 cp -r ~/bin/* ~/.dotfiles/bin/
 
