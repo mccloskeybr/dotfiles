@@ -7,10 +7,11 @@ mkdir ~/.vim
 mkdir ~/.zsh
 mkdir ~/.tmux
 mkdir ~/.profiles
+mkdir ~/.xmonad
 mkdir ~/bin
 
-# apt-get packages
-sudo apt-get install cmake ctags python3 pip fonts-powerline
+# general packages
+sudo apt-get install cmake ctags xmonad gnome-panel suckless-tools gmrun python3 pip fonts-powerline fzf
 
 # install zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -34,6 +35,7 @@ cp ./tmux.conf ~/.tmux.conf
 cp -r ./vim/* ~/.vim
 cp -r ./zsh/* ~/.zsh
 cp -r ./tmux/* ~/.tmux
+cp -r ./xmonad/* ~/.xmonad
 cp -r ./profiles/* ~./profiles
 cp -r ./bin/* ~/bin
 
