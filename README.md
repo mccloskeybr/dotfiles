@@ -15,6 +15,8 @@ incl config files for:
 *   gnome-terminal
 *   iterm2
 
+![example](/example.png)
+
 # Install
 
 just run the install shell script.
