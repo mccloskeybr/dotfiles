@@ -1,0 +1,13 @@
+{
+    "border": "normal",
+    "name": "chrome",
+    "percent": 1,
+    "type": "con",
+    "swallows": [
+       {
+        "class": "^Google\\-chrome$",
+        "instance": "^google\\-chrome$"
+       }
+    ]
+}
+

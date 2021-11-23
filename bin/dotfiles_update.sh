@@ -9,6 +9,8 @@ cp ~/.zshrc ~/.dotfiles/zshrc
 cp ~/.vimrc ~/.dotfiles/vimrc
 cp ~/.tmux.conf ~/.dotfiles/tmux.conf
 cp ~/.hgrc ~/.dotfiles/hgrc
+cp ~/.config/i3/config ~/.dotfiles/i3.config
+cp ~/.config/alacritty/alacritty.yml ~/.dotfiles/alacritty.yml
 
 cp ~/.vim/settings.vim ~/.dotfiles/vim/settings.vim
 cp ~/.vim/plugins.vim ~/.dotfiles/vim/plugins.vim
@@ -28,6 +30,8 @@ cp ~/.tmux/plugins.conf ~/.dotfiles/tmux/plugins.conf
 cp -r ~/.tmux/plugins/* ~/.dotfiles/tmux/plugins/
 
 cp ~/.profiles/* ~/.dotfiles/profiles/
+
+cp ~/.config/i3/workspace* ~/.dotfiles/i3/
 
 cp -r ~/bin/* ~/.dotfiles/bin/
 
