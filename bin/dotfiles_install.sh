@@ -6,6 +6,7 @@ mkdir ~/.dotfiles
 mkdir ~/.vim
 mkdir ~/.zsh
 mkdir ~/.tmux
+mkdir ~/.hg
 mkdir ~/.config
 mkdir ~/.config/alacritty
 mkdir ~/.config/i3
@@ -28,19 +29,19 @@ git clone https://github.com/mccloskeybr/dotfiles ~/.dotfiles
 
 # copy relevant dotfiles over
 cd ~/.dotfiles
-cp ./zshrc ~/.zshrc
-cp ./vimrc ~/.vimrc
-cp ./hgrc ~/.hgrc
-cp ./tmux.conf ~/.tmux.conf
-cp ./profiles/alacritty.yml ~/.config/alacritty/alacritty.yml
-cp ./i3.config ~/.config/i3/config
-
-cp -r ./vim/* ~/.vim
 cp -r ./zsh/* ~/.zsh
+cp -r ./vim/* ~/.vim
 cp -r ./tmux/* ~/.tmux
-cp -r ./xmonad/* ~/.xmonad
+cp -r ./hg/* ~/.hg
 cp -r ./i3/* ~/.config/i3/
 cp -r ./bin/* ~/bin
+cp ./profiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+
+# move basefiles out
+mv ~/.zsh/.zshrc ~
+mv ~/.vim/.vimrc ~
+mv ~/.tmux/.tmux.conf ~
+mv ~/.hg/.hgrc ~
 
 source ~/.zshrc
 
