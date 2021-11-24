@@ -1,15 +1,15 @@
-[submodule "zsh-histdb"]
-  path = zsh/custom_plugins/zsh-histdb
-  url = https://github.com/larkery/zsh-histdb
-[submodule "tpm"]
+[submodule "tmux/plugins/tpm"]
   path = tmux/plugins/tpm
   url = https://github.com/tmux-plugins/tpm
-[submodule "tmux-cpu"]
+[submodule "tmux/plugins/tmux-cpu"]
   path = tmux/plugins/tmux-cpu
   url = https://github.com/tmux-plugins/tmux-cpu
-[submodule "tmux-sensible"]
+[submodule "tmux/plugins/tmux-sensible"]
   path = tmux/plugins/tmux-sensible
   url = https://github.com/tmux-plugins/tmux-sensible
-[submodule "tmux-yank"]
+[submodule "tmux/plugins/tmux-yank"]
   path = tmux/plugins/tmux-yank
   url = https://github.com/tmux-plugins/tmux-yank
+[submodule "zsh/custom_plugins/zsh-histdb"]
+	path = zsh/custom_plugins/zsh-histdb
+	url = https://github.com/larkery/zsh-histdb
