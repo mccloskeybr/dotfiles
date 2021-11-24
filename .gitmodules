@@ -1,3 +1,6 @@
+[submodule "zsh-histdb"]
+  path = zsh/custom_plugins/zsh-histdb
+  url = https://github.com/larkery/zsh-histdb
 [submodule "tpm"]
   path = tmux/plugins/tpm
   url = https://github.com/tmux-plugins/tpm
