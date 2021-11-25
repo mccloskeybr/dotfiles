@@ -15,7 +15,7 @@ incl config files for:
 *   gnome-terminal
 *   iterm2
 
-![example](/picture.png)
+![example](/screenshot.png)
 
 # Install
 
