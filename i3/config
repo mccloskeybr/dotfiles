@@ -30,7 +30,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-msg exit"
+bindsym $mod+Shift+e exec "i3lock -c 964040 -f"
 
 # change focus
 bindsym $mod+j focus left
