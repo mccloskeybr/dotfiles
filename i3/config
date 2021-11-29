@@ -119,6 +119,12 @@ bar {
             background $background
             statusline $foreground
             separator $text_lo
+
+#                               background  foreground  text
+            focused_workspace   $foreground $foreground $text_hi
+            active_workspace    $background $background $text_lo
+            inactive_workspace  $background $background $text_lo
+            urgent_workspace    $highlight  $highlight  $text_hi
         }
 }
 
