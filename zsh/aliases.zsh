@@ -10,7 +10,8 @@ alias grep='grep --color=auto'
 alias h=hg
 alias v=vim
 
-alias notes=vim ~/notes.txt
+alias notes='vim ~/notes.txt'
+alias gchat='exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi'
 
 alias history=histdb
 
