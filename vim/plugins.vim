@@ -173,3 +173,6 @@ let g:tagbar_autoclose = 1
 " don't let vimwiki commandeer all markdown files
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
 let g:vimwiki_ext2syntax = {'.wiki': 'markdown'}
+
+" vim-lengthmatters
+call lengthmatters#highlight('ctermbg=2 ctermfg=5')
