@@ -41,6 +41,7 @@ Plugin 'machakann/vim-highlightedyank'                " highlighted yank
 Plugin 'osyo-manga/vim-over'                          " show substitutes
 Plugin 'vimwiki/vimwiki'                              " vim wiki
 Plugin 'terryma/vim-smooth-scroll'                    " sensible scroll speeds
+Plugin 'christoomey/vim-tmux-navigator'               " vim/tmux easy navigation
 
 call vundle#end()
 
