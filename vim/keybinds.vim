@@ -7,6 +7,9 @@ vnoremap // y/<C-R>"<CR>
 " copy over ssh via ctrl-c
 vmap <C-c> y:call SendViaOSC52(getreg('"'))<CR>
 
+" substitute visual selection
+vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
+
 " Lsp
 nnoremap <Leader>vj :vsplit<CR>:LspDefinition<CR>
 nnoremap <Leader>sj :split<CR>:LspDefinition<CR>

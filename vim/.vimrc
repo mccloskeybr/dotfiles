@@ -1,6 +1,7 @@
 " functions, libraries
 source ~/.vim/funcs/helpers.vim
 source ~/.vim/funcs/osc52.vim
+source ~/.vim/funcs/sub_visual.vim
 
 " settings
 source ~/.vim/plugins.vim
