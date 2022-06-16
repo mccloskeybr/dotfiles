@@ -1,5 +1,3 @@
-set nocompatible
-
 set encoding=utf-8
 set t_Co=256
 set background=dark
@@ -29,11 +27,12 @@ set ruler           " show current row, col, etc
 set mouse=a         " mouse isn't useless
 set splitbelow      " preview window at bottom
 set pumheight=15    " pop up height
-set ttyfast         " smooth redraw
 
 set scrolloff=5     " n lines to show past relevancy
 
 set completeopt=menuone,noinsert,noselect,preview
+
+set guicursor=n-v-c-i:block
 
 syntax on
 
@@ -42,12 +41,11 @@ set noswapfile
 set directory=""
 
 " persistent undo
-let undo_dir=$HOME.'/.vim/undo'
+let undo_dir=$HOME.'/.config/nvim/undo'
 if !isdirectory(undo_dir)
   call mkdir(undo_dir, 'p')
 endif
 set undofile
 let &undodir=undo_dir
 
-" start vim with these cmds
-autocmd VimEnter * Minimap
+call SourceIfExists('~/.config/nvim/local/settings.vim')

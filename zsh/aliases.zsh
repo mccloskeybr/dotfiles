@@ -8,7 +8,7 @@ alias cat='ccat'
 alias less='cless -N'
 alias grep='grep --color=auto'
 alias h=hg
-alias v=vim
+alias v=nvim
 
 alias notes='vim ~/notes.txt'
 alias gchat='exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi'
