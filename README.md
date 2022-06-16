@@ -2,12 +2,12 @@
 
 my dotfiles.
 
-these should be configured (or configurable) for mac osx and debian.
+designed for linux but also works on osx with minor tweaks.
 
 incl config files for:
 
 *   zsh
-*   vim
+*   nvim
 *   tmux
 *   mercurial (hg)
 *   i3
@@ -28,7 +28,7 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/mccloskeybr/
 To update the repo given a new set of dotfiles:
 
 ```
-sh update.sh
+sh dotfiles_update.sh
 ```
 
 Also need to install:
