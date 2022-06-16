@@ -30,3 +30,14 @@ require('telescope').setup{
 require('hop').setup{
   multi_windows = true
 }
+
+-- treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "cpp", "java", "lua", "markdown", "proto", "python" },
+  sync_install = false,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}

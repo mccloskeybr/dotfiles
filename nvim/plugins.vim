@@ -3,9 +3,7 @@
 call plug#begin()
 
 " vim-based plugins
-Plug 'vim-jp/cpp-vim'                               " cpp syntax, highlighting
-Plug 'octol/vim-cpp-enhanced-highlight'             " /enhanced/ highlighting :)
-Plug 'prabirshrestha/async.vim'                     " async base
+Plug 'prabirshrestha/async.vim'                     " async lib base
 Plug 'prabirshrestha/vim-lsp'                       " base lsp
 Plug 'prabirshrestha/asyncomplete-lsp.vim'          " async lsp
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'    " async ultisnips
@@ -43,6 +41,7 @@ Plug 'christoomey/vim-tmux-navigator'               " vim/tmux navigation
 Plug 'nvim-lua/plenary.nvim'                        " dependency for nvim
 Plug 'nvim-telescope/telescope.nvim'                " telescope
 Plug 'phaazon/hop.nvim'                             " nvim easysearch and hopping
+Plug 'nvim-treesitter/nvim-treesitter'              " syntax highlighting
 
 call SourceIfExists('~/.config/nvim/local/plugins.vim')
 
