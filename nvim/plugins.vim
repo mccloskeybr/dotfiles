@@ -47,3 +47,6 @@ Plug 'phaazon/hop.nvim'                             " nvim easysearch and hoppin
 call SourceIfExists('~/.config/nvim/local/plugins.vim')
 
 call plug#end()
+
+source ~/.config/nvim/plugin_conf.vim
+source ~/.config/nvim/plugin_conf.lua
