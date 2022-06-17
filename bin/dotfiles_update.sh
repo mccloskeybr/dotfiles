@@ -8,13 +8,12 @@
 
 echo "updating dotfiles..."
 
-cp ~/.config/nvim/init.vim ~/.dotfiles/nvim/init.vim
-cp ~/.config/nvim/plugins.vim ~/.dotfiles/nvim/plugins.vim
-cp ~/.config/nvim/plugin_conf.vim ~/.dotfiles/nvim/plugin_conf.vim
-cp ~/.config/nvim/plugin_conf.lua ~/.dotfiles/nvim/plugin_conf.lua
-cp ~/.config/nvim/settings.vim ~/.dotfiles/nvim/settings.vim
-cp ~/.config/nvim/keybinds.vim ~/.dotfiles/nvim/keybinds.vim
-cp -r ~/.config/nvim/funcs/* ~/.dotfiles/nvim/funcs/
+cp ~/.config/nvim/init.lua ~/.dotfiles/nvim/init.lua
+cp ~/.config/nvim/lua/plugins.lua ~/.dotfiles/nvim/lua/plugins.lua
+cp ~/.config/nvim/lua/settings.lua ~/.dotfiles/nvim/lua/settings.lua
+cp ~/.config/nvim/lua/keybinds.lua ~/.dotfiles/nvim/lua/keybinds.lua
+cp -r ~/.config/nvim/custom_plugins/* ~/.dotfiles/nvim/custom_plugins/
+cp -r ~/.config/nvim/lua/funcs/* ~/.dotfiles/nvim/lua/funcs/
 
 cp ~/.zshrc ~/.dotfiles/zsh/.zshrc
 cp ~/.zsh/exports.zsh ~/.dotfiles/zsh/exports.zsh

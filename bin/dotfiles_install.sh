@@ -6,6 +6,7 @@ mkdir ~/.dotfiles
 mkdir ~/.config
 mkdir ~/.config/nvim
 mkdir ~/.config/nvim/autoload
+mkdir ~/.config/nvim/undo
 mkdir ~/.zsh
 mkdir ~/.tmux
 mkdir ~/.iterm2
