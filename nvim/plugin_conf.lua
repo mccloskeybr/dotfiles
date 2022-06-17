@@ -32,8 +32,11 @@ require('hop').setup{
 }
 
 -- treesitter
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "java", "lua", "markdown", "proto", "python" },
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "bash", "c", "cpp", "java", "lua",
+    "markdown", "proto", "python", "yaml"
+  },
   sync_install = false,
 
   highlight = {

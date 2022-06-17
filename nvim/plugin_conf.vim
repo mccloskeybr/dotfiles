@@ -1,13 +1,6 @@
 " Vim-based plugin configurations
 " ===============================
 
-" cpp-vim, vim-cpp-enhanced-highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_posix_standard = 1
-let g:cpp_concepts_highlight = 1
-
 " async
 let g:lsp_async_completion = 1
 let g:lsp_signs_enabled = 1
@@ -45,49 +38,8 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-v': 'vsplit' }
 
-" ctrlp
-function! MyCtrlP()
-  let l:local_pwd = GetLocalRoot()
-  if l:local_pwd == ""
-    let g:ctrlp_working_path_mode = 'ra'
-  else
-    exec "cd " . l:local_pwd
-    let g:ctrlp_working_path_mode = ''
-  endif
-  :CtrlP
-endfunction
-
-if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-elseif executable('ag')
-  let g:ctrlp_user_command = 'ag --literal --files-with-matches --nocolor --hidden -g "" %s'
-else
-  let g:ctrlp_user_command = {
-      \ 'types': {
-          \ 1: ['.git/', 'cd %s && git ls-files -oc --exclude-standard'],
-          \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
-      \ },
-      \ 'fallback': 'find %s -type f'
-  \ }
-endif
-
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_use_caching=0
-let g:ctrlp_cmd = 'call MyCtrlP()'
-let g:ctrlp_match_window = 'max:20'
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-
-" nerdcommenter
-let g:NERDCreateDefaultMappings = 0
-let g:NERDSpaceDelims = 1
-
 " signify
 let g:signify_update_on_focusgained = 1
-
-" vim-markdown-preview
-let vim_markdown_preview_github=1
-let vim_markdown_preview_browser='Google Chrome'
-let vim_markdown_preview_hotkey='<C-m>'
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
