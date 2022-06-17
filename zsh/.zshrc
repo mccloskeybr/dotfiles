@@ -8,3 +8,5 @@ if [ -f ~/.zsh/local.zsh ]; then
 fi
 
 source startup.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
