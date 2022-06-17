@@ -33,7 +33,7 @@ vim.o.scrolloff = 5       -- n lines to show past relevancy
 
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noinsert,noselect,preview"
-vim.o.guicursor="n-v-c-i:block"
+vim.o.guicursor = "n-v-c-i:block"
 
 vim.o.swapfile = false
 vim.o.undodir = os.getenv("HOME") .. "/.config/nvim/undo"

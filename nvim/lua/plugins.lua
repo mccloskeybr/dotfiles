@@ -4,12 +4,12 @@ local Plug = vim.fn['plug#']
 vim.fn['plug#begin']('~/.config/nvim/plugged')
 
 Plug('prabirshrestha/async.vim')                        -- async lib base
-Plug('prabirshrestha/vim-lsp')                           -- base lsp
+Plug('prabirshrestha/vim-lsp')                          -- base lsp
 Plug('prabirshrestha/asyncomplete-lsp.vim')             -- async lsp
 Plug('prabirshrestha/asyncomplete-ultisnips.vim')       -- async ultisnips
 Plug('prabirshrestha/asyncomplete.vim')                 -- async autocomplete
 Plug('google/vim-searchindex')                          -- index search results
-Plug('SirVer/ultisnips')                                 -- snippets
+Plug('SirVer/ultisnips')                                -- snippets
 Plug('honza/vim-snippets')                              -- snippets package
 Plug('Yggdroot/indentLine')                             -- show indent pairings
 Plug('Valloric/MatchTagAlways')                         -- show matched tags
@@ -57,19 +57,19 @@ vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 -- indentLine
-vim.g.indentLine_char='|'
-vim.g.indentLine_showFirstIndentLevel=1
-vim.g.indentLine_indentLevel=10
-vim.g.indentLine_fileTypeExclude={"startify"}
+vim.g.indentLine_char = '|'
+vim.g.indentLine_showFirstIndentLevel = 1
+vim.g.indentLine_indentLevel = 10
+vim.g.indentLine_fileTypeExclude = { "startify" }
 
 -- vim-better-whitespace
-vim.g.better_whitespace_enabled=1
-vim.g.strip_whitespace_on_save=1
+vim.g.better_whitespace_enabled = 1
+vim.g.strip_whitespace_on_save = 1
 
 -- fzf
-vim.g.fzf_action={
-  ['ctrl-t']='tab split',
-  ['ctrl-v']='vsplit'
+vim.g.fzf_action = {
+  ['ctrl-t'] = 'tab split',
+  ['ctrl-v'] = 'vsplit'
 }
 
 -- signify
@@ -79,7 +79,7 @@ vim.g.signify_vcs_list = 'hg'
 -- vim-airline
 vim.g['airline#extensions#tabline#enabled'] = 1
 vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme='raven'
+vim.g.airline_theme ='raven'
 
 -- vim-lengthmatters
 vim.fn['lengthmatters#highlight']('ctermbg=2 ctermfg=5')
