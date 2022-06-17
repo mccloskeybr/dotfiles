@@ -3,6 +3,7 @@
 # this script simply overwrites everything currently contained in
 # the cloned repository. if it's out of date, merge conflicts will happen.
 
+# note that profiles must be manually copied (i.e. iterm2, alacritty).
 # files must be manually copied to avoid copying work-specific settings.
 
 echo "updating dotfiles..."
@@ -30,8 +31,6 @@ cp ~/.tmux/plugins.conf ~/.dotfiles/tmux/plugins.conf
 cp -r ~/.tmux/plugins/* ~/.dotfiles/tmux/plugins/
 
 cp ~/.hgrc ~/.dotfiles/hg/.hgrc
-
-cp ~/.iterm2/* ~/.dotfiles/profiles/
 
 cp -r ~/bin/* ~/.dotfiles/bin/
 

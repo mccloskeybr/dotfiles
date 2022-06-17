@@ -31,7 +31,6 @@ cd ~/.dotfiles
 cp ./zshrc ~/.zshrc
 cp ./hgrc ~/.hgrc
 cp ./tmux.conf ~/.tmux.conf
-cp ./iterm2/* ~/.iterm2
 
 cp -r ./nvim/* ~/.config/nvim
 cp -r ./zsh/* ~/.zsh
