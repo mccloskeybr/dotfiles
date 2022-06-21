@@ -8,9 +8,10 @@ nnoremap("<Leader>lg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<Leader>e", "<cmd>HopChar1<CR>")
 nnoremap("<Leader>f", "<cmd>FZF<CR>")
 
-nnoremap("<Leader>vj", "<cmd>vsplit<CR><cmd>LspDefinition<CR>")
-nnoremap("<Leader>jr", "<cmd>LspReferences<CR>")
-nnoremap("<Leader>c", "<cmd>LspCodeAction<CR>")
+nnoremap("<Leader>c", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+nnoremap("<Leader>k", "<cmd>lua vim.lsp.buf.hover()<CR>")
+nnoremap("<Leader>jr", "<cmd>lua vim.lsp.buf.definition()<CR>")
+nnoremap("<Leader>jv", "<cmd>vsplit<CR><cmd>lua vim.lsp.buf.definition()<CR>")
 
 nnoremap_silent("<C-b>", "<cmd>call smooth_scroll#up(&scroll, 0, 2)<CR>")
 nnoremap_silent("<C-f>", "<cmd>call smooth_scroll#down(&scroll, 0, 2)<CR>")

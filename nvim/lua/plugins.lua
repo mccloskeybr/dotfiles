@@ -3,11 +3,9 @@ require("funcs.helpers")
 local Plug = vim.fn['plug#']
 vim.fn['plug#begin']('~/.config/nvim/plugged')
 
-Plug('prabirshrestha/async.vim')                        -- async lib base
-Plug('prabirshrestha/vim-lsp')                          -- base lsp
-Plug('prabirshrestha/asyncomplete-lsp.vim')             -- async lsp
-Plug('prabirshrestha/asyncomplete-ultisnips.vim')       -- async ultisnips
-Plug('prabirshrestha/asyncomplete.vim')                 -- async autocomplete
+Plug('neovim/nvim-lspconfig')                           -- lsp
+Plug('Shougo/deoplete-lsp')                             -- autocomplete
+Plug('Shougo/deoplete.nvim', {['do'] = ':UpdateRemotePlugins' })
 Plug('google/vim-searchindex')                          -- index search results
 Plug('SirVer/ultisnips')                                -- snippets
 Plug('honza/vim-snippets')                              -- snippets package
@@ -51,6 +49,9 @@ vim.g.lsp_document_code_action_signs_enabled = 0
 vim.g.asyncomplete_auto_popup = 1
 vim.g.asyncomplete_auto_completeopt = 0
 
+-- enable autocomplete
+vim.g['deoplete#enable_at_startup'] = 1
+
 -- ultisnips
 vim.g.UltiSnipsExpandTrigger = "<Tab>"
 vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
@@ -86,7 +87,7 @@ vim.fn['lengthmatters#highlight']('ctermbg=2 ctermfg=5')
 
 -- telescope
 local actions = require('telescope.actions')
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     layout_strategy = "horizontal",
     layout_config = {
@@ -110,7 +111,7 @@ require('telescope').setup{
 }
 
 -- hop
-require('hop').setup{
+require('hop').setup {
   multi_windows = true
 }
 
