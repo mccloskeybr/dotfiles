@@ -7,8 +7,6 @@ Plug('neovim/nvim-lspconfig')                           -- lsp
 Plug('Shougo/deoplete-lsp')                             -- autocomplete
 Plug('Shougo/deoplete.nvim', {['do'] = ':UpdateRemotePlugins' })
 Plug('google/vim-searchindex')                          -- index search results
-Plug('SirVer/ultisnips')                                -- snippets
-Plug('honza/vim-snippets')                              -- snippets package
 Plug('Yggdroot/indentLine')                             -- show indent pairings
 Plug('Valloric/MatchTagAlways')                         -- show matched tags
 Plug('ntpeters/vim-better-whitespace')                  -- trailing whitespace
@@ -19,7 +17,6 @@ Plug('vim-airline/vim-airline')                         -- status line
 Plug('vim-airline/vim-airline-themes')                  -- status line themes
 Plug('mhinz/vim-signify')                               -- visible hg changes
 Plug('mhinz/vim-startify')                              -- vim start screen
-Plug('tpope/vim-sensible')                              -- sensible defaults
 Plug('whatyouhide/vim-lengthmatters')                   -- highlight long lines
 Plug('machakann/vim-highlightedyank')                   -- highlighted yank
 Plug('haya14busa/vim-poweryank')                        -- yank over ssh
@@ -27,8 +24,8 @@ Plug('osyo-manga/vim-over')                             -- show substitutes
 Plug('terryma/vim-smooth-scroll')                       -- smooth scroll
 Plug('christoomey/vim-tmux-navigator')                  -- vim/tmux navigation
 Plug('preservim/vimux')                                 -- tmux interact in vim
-Plug('nvim-lua/plenary.nvim')                           -- dependency for nvim
-Plug('nvim-telescope/telescope.nvim')                   -- telescope
+Plug('nvim-lua/plenary.nvim')                           -- lua async module
+Plug('nvim-telescope/telescope.nvim')                   -- out of file grep
 Plug('phaazon/hop.nvim')                                -- in-file jumping
 Plug('nvim-treesitter/nvim-treesitter')                 -- syntax highlighting
 
@@ -51,11 +48,6 @@ vim.g.asyncomplete_auto_completeopt = 0
 
 -- enable autocomplete
 vim.g['deoplete#enable_at_startup'] = 1
-
--- ultisnips
-vim.g.UltiSnipsExpandTrigger = "<Tab>"
-vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 -- indentLine
 vim.g.indentLine_char = '|'
