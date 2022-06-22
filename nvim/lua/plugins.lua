@@ -3,31 +3,31 @@ require("funcs.helpers")
 local Plug = vim.fn['plug#']
 vim.fn['plug#begin']('~/.config/nvim/plugged')
 
-Plug('neovim/nvim-lspconfig')                           -- lsp
-Plug('Shougo/deoplete-lsp')                             -- autocomplete
+Plug('neovim/nvim-lspconfig')                                   -- lsp
+Plug('Shougo/deoplete-lsp')                                     -- autocomplete
 Plug('Shougo/deoplete.nvim', {['do'] = ':UpdateRemotePlugins' })
-Plug('google/vim-searchindex')                          -- index search results
-Plug('Yggdroot/indentLine')                             -- show indent pairings
-Plug('Valloric/MatchTagAlways')                         -- show matched tags
-Plug('ntpeters/vim-better-whitespace')                  -- trailing whitespace
-Plug('junegunn/fzf')                                    -- fzf base
-Plug('junegunn/fzf.vim')                                -- fzf vim
-Plug('junegunn/vim-peekaboo')                           -- show registers
-Plug('vim-airline/vim-airline')                         -- status line
-Plug('vim-airline/vim-airline-themes')                  -- status line themes
-Plug('mhinz/vim-signify')                               -- visible hg changes
-Plug('mhinz/vim-startify')                              -- vim start screen
-Plug('whatyouhide/vim-lengthmatters')                   -- highlight long lines
-Plug('machakann/vim-highlightedyank')                   -- highlighted yank
-Plug('haya14busa/vim-poweryank')                        -- yank over ssh
-Plug('osyo-manga/vim-over')                             -- show substitutes
-Plug('terryma/vim-smooth-scroll')                       -- smooth scroll
-Plug('christoomey/vim-tmux-navigator')                  -- vim/tmux navigation
-Plug('preservim/vimux')                                 -- tmux interact in vim
-Plug('nvim-lua/plenary.nvim')                           -- lua async module
-Plug('nvim-telescope/telescope.nvim')                   -- out of file grep
-Plug('phaazon/hop.nvim')                                -- in-file jumping
-Plug('nvim-treesitter/nvim-treesitter')                 -- syntax highlighting
+Plug('google/vim-searchindex')                                  -- index search results
+Plug('Yggdroot/indentLine')                                     -- show indent pairings
+Plug('Valloric/MatchTagAlways')                                 -- show matched tags
+Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
+Plug('junegunn/fzf')                                            -- fzf base
+Plug('junegunn/fzf.vim')                                        -- fzf vim
+Plug('junegunn/vim-peekaboo')                                   -- show registers
+Plug('vim-airline/vim-airline')                                 -- status line
+Plug('vim-airline/vim-airline-themes')                          -- status line themes
+Plug('mhinz/vim-signify')                                       -- visible hg changes
+Plug('mhinz/vim-startify')                                      -- vim start screen
+Plug('whatyouhide/vim-lengthmatters')                           -- highlight long lines
+Plug('machakann/vim-highlightedyank')                           -- highlighted yank
+Plug('haya14busa/vim-poweryank')                                -- yank over ssh
+Plug('osyo-manga/vim-over')                                     -- show substitutes
+Plug('terryma/vim-smooth-scroll')                               -- smooth scroll
+Plug('christoomey/vim-tmux-navigator')                          -- vim/tmux navigation
+Plug('preservim/vimux')                                         -- tmux interact in vim
+Plug('nvim-lua/plenary.nvim')                                   -- lua async module
+Plug('nvim-telescope/telescope.nvim')                           -- out of file grep
+Plug('phaazon/hop.nvim')                                        -- in-file jumping
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- syntax highlighting
 
 do_if_exists(os.getenv("HOME") .. "/.config/nvim/lua/local/plugins.lua")
 
@@ -110,8 +110,8 @@ require('hop').setup {
 -- treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
-    "bash", "c", "cpp", "java", "lua",
-    "markdown", "proto", "python", "yaml"
+    "bash", "c", "cpp", "java", "javascript", "lua",
+    "markdown", "proto", "python", "typescript", "yaml"
   },
   sync_install = false,
 
