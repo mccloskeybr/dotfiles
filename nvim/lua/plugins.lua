@@ -12,7 +12,7 @@ Plug('Valloric/MatchTagAlways')                                 -- show matched 
 Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
 Plug('junegunn/fzf')                                            -- fzf base
 Plug('junegunn/fzf.vim')                                        -- fzf vim
-Plug('junegunn/vim-peekaboo')                                   -- show registers
+Plug('tversteeg/registers.nvim')                                -- view y/p registers
 Plug('vim-airline/vim-airline')                                 -- status line
 Plug('vim-airline/vim-airline-themes')                          -- status line themes
 Plug('mhinz/vim-signify')                                       -- visible hg changes
@@ -76,6 +76,12 @@ vim.g.airline_theme ='raven'
 
 -- vim-lengthmatters
 vim.fn['lengthmatters#highlight']('ctermbg=2 ctermfg=5')
+
+-- registers
+vim.cmd('hi RegistersWindow ctermbg=black')
+vim.g.registers_window_border = "rounded"
+vim.g.registers_window_min_height = 15
+vim.g.registers_window_max_width = 100
 
 -- telescope
 local actions = require('telescope.actions')
