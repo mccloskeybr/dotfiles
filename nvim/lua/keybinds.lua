@@ -4,9 +4,9 @@ require("funcs.helpers")
 nnoremap("<Leader><space>", "<cmd>noh<CR>")
 vnoremap("<Leader>//", "y/<CR>")
 
+nnoremap("<Leader>f", "<cmd>Telescope find_files<CR>")
 nnoremap("<Leader>lg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<Leader>e", "<cmd>HopChar1<CR>")
-nnoremap("<Leader>f", "<cmd>FZF<CR>")
 
 nnoremap("<Leader>c", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 nnoremap("<Leader>k", "<cmd>lua vim.lsp.buf.hover()<CR>")

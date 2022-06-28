@@ -10,8 +10,6 @@ Plug('google/vim-searchindex')                                  -- index search 
 Plug('Yggdroot/indentLine')                                     -- show indent pairings
 Plug('Valloric/MatchTagAlways')                                 -- show matched tags
 Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
-Plug('junegunn/fzf')                                            -- fzf base
-Plug('junegunn/fzf.vim')                                        -- fzf vim
 Plug('tversteeg/registers.nvim')                                -- view y/p registers
 Plug('vim-airline/vim-airline')                                 -- status line
 Plug('vim-airline/vim-airline-themes')                          -- status line themes
@@ -26,6 +24,7 @@ Plug('christoomey/vim-tmux-navigator')                          -- vim/tmux navi
 Plug('preservim/vimux')                                         -- tmux interact in vim
 Plug('nvim-lua/plenary.nvim')                                   -- lua async module
 Plug('nvim-telescope/telescope.nvim')                           -- out of file grep
+Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make' })
 Plug('phaazon/hop.nvim')                                        -- in-file jumping
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- syntax highlighting
 
@@ -105,8 +104,17 @@ require('telescope').setup {
         ["<c-q>"] = actions.send_to_qflist,
       },
     },
+  },
+   extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
   }
 }
+require('telescope').load_extension('fzf')
 
 -- hop
 require('hop').setup {
