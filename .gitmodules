@@ -13,3 +13,7 @@
 [submodule "zsh/custom_plugins/zsh-histdb"]
 	path = zsh/custom_plugins/zsh-histdb
 	url = https://github.com/larkery/zsh-histdb
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
