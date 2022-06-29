@@ -11,10 +11,9 @@ Plug('Yggdroot/indentLine')                                     -- show indent p
 Plug('Valloric/MatchTagAlways')                                 -- show matched tags
 Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
 Plug('tversteeg/registers.nvim')                                -- view y/p registers
-Plug('vim-airline/vim-airline')                                 -- status line
-Plug('vim-airline/vim-airline-themes')                          -- status line themes
+Plug('nvim-lualine/lualine.nvim')                               -- lua statusline
 Plug('mhinz/vim-signify')                                       -- visible hg changes
-Plug('mhinz/vim-startify')                                      -- vim start screen
+Plug('startup-nvim/startup.nvim')                               -- startup dash
 Plug('whatyouhide/vim-lengthmatters')                           -- highlight long lines
 Plug('machakann/vim-highlightedyank')                           -- highlighted yank
 Plug('haya14busa/vim-poweryank')                                -- yank over ssh
@@ -36,4 +35,4 @@ vim.fn['plug#end']()
 vim.cmd('source ~/.config/nvim/custom_plugins/*.vim')
 
 -- load plugin configurations
-do_all_in_directory(os.getenv('HOME') .. '/.config/nvim/lua/plugins/')
+do_all_in_directory(os.getenv('HOME') .. '/.config/nvim/lua/plugin_conf/')
