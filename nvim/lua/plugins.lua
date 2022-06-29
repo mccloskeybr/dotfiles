@@ -18,7 +18,6 @@ Plug('mhinz/vim-startify')                                      -- vim start scr
 Plug('whatyouhide/vim-lengthmatters')                           -- highlight long lines
 Plug('machakann/vim-highlightedyank')                           -- highlighted yank
 Plug('haya14busa/vim-poweryank')                                -- yank over ssh
-Plug('osyo-manga/vim-over')                                     -- show substitutes
 Plug('terryma/vim-smooth-scroll')                               -- smooth scroll
 Plug('christoomey/vim-tmux-navigator')                          -- vim/tmux navigation
 Plug('preservim/vimux')                                         -- tmux interact in vim
