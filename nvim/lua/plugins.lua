@@ -1,4 +1,4 @@
-require("funcs.helpers")
+require('funcs.helpers')
 
 local Plug = vim.fn['plug#']
 vim.fn['plug#begin']('~/.config/nvim/plugged')
@@ -24,15 +24,16 @@ Plug('preservim/vimux')                                         -- tmux interact
 Plug('nvim-lua/plenary.nvim')                                   -- lua async module
 Plug('nvim-telescope/telescope.nvim')                           -- out of file grep
 Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make' })
+Plug('nvim-telescope/telescope-ui-select.nvim')                 -- use sleek telescope ui
 Plug('phaazon/hop.nvim')                                        -- in-file jumping
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- syntax highlighting
 
-do_if_exists(os.getenv("HOME") .. "/.config/nvim/lua/local/plugins.lua")
+do_if_exists(os.getenv('HOME') .. '/.config/nvim/lua/local/plugins.lua')
 
 vim.fn['plug#end']()
 
 -- load in custom vim script plugins
-vim.cmd("source ~/.config/nvim/custom_plugins/sub_visual.vim")
+vim.cmd('source ~/.config/nvim/custom_plugins/sub_visual.vim')
 
 -- Plugin config.
 
@@ -51,7 +52,7 @@ vim.g['deoplete#enable_at_startup'] = 1
 vim.g.indentLine_char = '|'
 vim.g.indentLine_showFirstIndentLevel = 1
 vim.g.indentLine_indentLevel = 10
-vim.g.indentLine_fileTypeExclude = { "startify" }
+vim.g.indentLine_fileTypeExclude = { 'startify' }
 
 -- vim-better-whitespace
 vim.g.better_whitespace_enabled = 1
@@ -77,7 +78,7 @@ vim.fn['lengthmatters#highlight']('ctermbg=2 ctermfg=5')
 
 -- registers
 vim.cmd('hi RegistersWindow ctermbg=black')
-vim.g.registers_window_border = "rounded"
+vim.g.registers_window_border = 'rounded'
 vim.g.registers_window_min_height = 15
 vim.g.registers_window_max_width = 100
 
@@ -85,7 +86,7 @@ vim.g.registers_window_max_width = 100
 local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
-    layout_strategy = "horizontal",
+    layout_strategy = 'horizontal',
     layout_config = {
       horizontal = {
         preview_width = 80
@@ -93,27 +94,32 @@ require('telescope').setup {
     },
     mappings = {
       i = {
-        ["<c-j>"] = actions.move_selection_next,
-        ["<c-k>"] = actions.move_selection_previous,
-        ["<c-q>"] = actions.send_to_qflist,
+        ['<c-j>'] = actions.move_selection_next,
+        ['<c-k>'] = actions.move_selection_previous,
+        ['<c-q>'] = actions.send_to_qflist,
       },
       n = {
-        ["<c-j>"] = actions.move_selection_next,
-        ["<c-k>"] = actions.move_selection_previous,
-        ["<c-q>"] = actions.send_to_qflist,
+        ['<c-j>'] = actions.move_selection_next,
+        ['<c-k>'] = actions.move_selection_previous,
+        ['<c-q>'] = actions.send_to_qflist,
       },
     },
   },
    extensions = {
-    fzf = {
+    ['fzf'] = {
       fuzzy = true,
       override_generic_sorter = true,
       override_file_sorter = true,
-      case_mode = "smart_case",
+      case_mode = 'smart_case',
+    },
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown {
+      }
     }
   }
 }
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('ui-select')
 
 -- hop
 require('hop').setup {
@@ -123,8 +129,8 @@ require('hop').setup {
 -- treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
-    "bash", "c", "cpp", "java", "javascript", "lua",
-    "markdown", "proto", "python", "typescript", "yaml"
+    'bash', 'c', 'cpp', 'java', 'javascript', 'lua',
+    'markdown', 'proto', 'python', 'typescript', 'yaml'
   },
   sync_install = false,
 
