@@ -1,9 +1,14 @@
 # don't include local configs
-*local.vim
-*local.zsh
-*hgrc_local
+*local*
 
-# bin scripts need to be whitelisted
+nvim/plugged
+nvim/undo
+nvim/backup
+
+hg/blackbox.log
+hg/wcache
+
+# bin scripts need to be allowlisted
 bin/*
 bin/*/
 !bin/dotfiles_install.sh

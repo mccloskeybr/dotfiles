@@ -10,10 +10,13 @@
 [submodule "tmux/plugins/tmux-yank"]
   path = tmux/plugins/tmux-yank
   url = https://github.com/tmux-plugins/tmux-yank
+[submodule "tmux/plugins/vim-tmux-navigator"]
+  path = tmux/plugins/vim-tmux-navigator
+  url = https://github.com/christoomey/vim-tmux-navigator
 [submodule "zsh/custom_plugins/zsh-histdb"]
-	path = zsh/custom_plugins/zsh-histdb
-	url = https://github.com/larkery/zsh-histdb
+  path = zsh/custom_plugins/zsh-histdb
+  url = https://github.com/larkery/zsh-histdb
 [submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-	ignore = dirty
+  path = dotbot
+  url = https://github.com/anishathalye/dotbot
+  ignore = dirty
