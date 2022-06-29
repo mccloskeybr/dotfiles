@@ -86,11 +86,9 @@ vim.g.registers_window_max_width = 100
 local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
-    layout_strategy = 'horizontal',
+    layout_strategy = 'vertical',
     layout_config = {
-      horizontal = {
-        preview_width = 80
-        }
+      width = 0.75
     },
     mappings = {
       i = {
@@ -105,7 +103,7 @@ require('telescope').setup {
       },
     },
   },
-   extensions = {
+  extensions = {
     ['fzf'] = {
       fuzzy = true,
       override_generic_sorter = true,
