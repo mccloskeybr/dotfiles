@@ -35,4 +35,4 @@ vim.fn['plug#end']()
 vim.cmd('source ~/.config/nvim/custom_plugins/*.vim')
 
 -- load plugin configurations
-do_all_in_directory(os.getenv('HOME') .. '/.config/nvim/lua/plugin_conf/')
+do_all_in_directory(os.getenv('HOME') .. '/.config/nvim/lua/plugins/')
