@@ -6,7 +6,6 @@ vim.fn['plug#begin']('~/.config/nvim/plugged')
 Plug('neovim/nvim-lspconfig')                                   -- lsp
 Plug('Shougo/deoplete-lsp')                                     -- autocomplete
 Plug('Shougo/deoplete.nvim', {['do'] = ':UpdateRemotePlugins' })
-Plug('google/vim-searchindex')                                  -- index search results
 Plug('Yggdroot/indentLine')                                     -- show indent pairings
 Plug('Valloric/MatchTagAlways')                                 -- show matched tags
 -- Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
