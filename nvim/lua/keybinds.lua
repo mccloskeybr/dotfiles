@@ -7,7 +7,13 @@ vnoremap("<Leader><Leader>", "y<ESC>/<C-r>\"<CR>")
 
 vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
 
-nnoremap("<Leader>tf", "<cmd>Telescope find_files<CR>")
+function telescope_find_files_cwd_project_root()
+  local file = vim.fn.expand('%')
+  local project_root = vim.fn.fnamemodify(file, ":p:h:s?croupier/.*?croupier/?")
+  local opts = { cwd = project_root }
+  require("telescope.builtin").find_files(opts)
+end
+nnoremap("<Leader>tf", "<cmd>lua telescope_find_files_cwd_project_root()<CR>")
 nnoremap("<Leader>tl", "<cmd>Telescope live_grep<CR>")
 nnoremap("<Leader>h", "<cmd>HopChar1<CR>")
 

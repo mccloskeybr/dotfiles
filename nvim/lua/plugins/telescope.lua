@@ -7,14 +7,12 @@ require('telescope').setup({
     },
     mappings = {
       i = {
-        ['<c-j>'] = actions.move_selection_next,
-        ['<c-k>'] = actions.move_selection_previous,
-        ['<c-q>'] = actions.send_to_qflist,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous,
       },
       n = {
-        ['<c-j>'] = actions.move_selection_next,
-        ['<c-k>'] = actions.move_selection_previous,
-        ['<c-q>'] = actions.send_to_qflist,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous,
       },
     },
   },
@@ -26,10 +24,12 @@ require('telescope').setup({
       case_mode = 'smart_case',
     },
     ['ui-select'] = {
-      require('telescope.themes').get_dropdown {
-      }
+      require('telescope.themes').get_dropdown({})
     }
   }
 })
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('ui-select')
+
+-- function to call find_files in the project root if available.
+
