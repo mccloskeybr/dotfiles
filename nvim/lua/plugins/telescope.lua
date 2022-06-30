@@ -1,5 +1,5 @@
 local actions = require('telescope.actions')
-require('telescope').setup {
+require('telescope').setup({
   defaults = {
     layout_strategy = 'vertical',
     layout_config = {
@@ -30,6 +30,6 @@ require('telescope').setup {
       }
     }
   }
-}
+})
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('ui-select')

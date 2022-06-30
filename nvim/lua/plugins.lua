@@ -9,7 +9,7 @@ Plug('Shougo/deoplete.nvim', {['do'] = ':UpdateRemotePlugins' })
 Plug('google/vim-searchindex')                                  -- index search results
 Plug('Yggdroot/indentLine')                                     -- show indent pairings
 Plug('Valloric/MatchTagAlways')                                 -- show matched tags
-Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
+-- Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
 Plug('tversteeg/registers.nvim')                                -- view y/p registers
 Plug('nvim-lualine/lualine.nvim')                               -- lua statusline
 Plug('mhinz/vim-signify')                                       -- visible hg changes
@@ -30,9 +30,6 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- syntax highli
 do_if_exists(os.getenv('HOME') .. '/.config/nvim/lua/local/plugins.lua')
 
 vim.fn['plug#end']()
-
--- load in custom vim script plugins
-vim.cmd('source ~/.config/nvim/custom_plugins/*.vim')
 
 -- load plugin configurations
 do_all_in_directory(os.getenv('HOME') .. '/.config/nvim/lua/plugins/')

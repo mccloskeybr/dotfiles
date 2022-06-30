@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
   ensure_installed = {
     'bash', 'c', 'cpp', 'java', 'javascript', 'lua',
     'proto', 'python', 'typescript', 'yaml'
@@ -9,4 +9,4 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-}
+})

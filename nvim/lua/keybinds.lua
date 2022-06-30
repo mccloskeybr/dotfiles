@@ -1,23 +1,21 @@
 require("funcs.map_funcs")
 require("funcs.helpers")
 
-nnoremap("<Leader><space>", "<cmd>noh<CR>")
-vnoremap("<Leader>//", "y/<CR>")
+vnoremap("<Leader><space>", "<cmd>noh<CR>")
+vnoremap("<Leader><Leader>", "y<ESC>/<C-r>\"<CR>")
+vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
 
-nnoremap("<Leader>f", "<cmd>Telescope find_files<CR>")
-nnoremap("<Leader>lg", "<cmd>Telescope live_grep<CR>")
-nnoremap("<Leader>e", "<cmd>HopChar1<CR>")
+nnoremap("<Leader>tf", "<cmd>Telescope find_files<CR>")
+nnoremap("<Leader>tl", "<cmd>Telescope live_grep<CR>")
+nnoremap("<Leader>h", "<cmd>HopChar1<CR>")
 
-nnoremap("<Leader>c", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-nnoremap("<Leader>k", "<cmd>lua vim.lsp.buf.hover()<CR>")
+nnoremap("<Leader>lc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+nnoremap("<Leader>lh", "<cmd>lua vim.lsp.buf.hover()<CR>")
 nnoremap("<Leader>jd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nnoremap("<Leader>jr", "<cmd>lua vim.lsp.buf.references()<CR>")
 
-nnoremap_silent("<C-b>", "<cmd>call smooth_scroll#up(&scroll, 0, 2)<CR>")
-nnoremap_silent("<C-f>", "<cmd>call smooth_scroll#down(&scroll, 0, 2)<CR>")
-
-vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
-vmap("<Leader>z", "<Esc>:%s/<C-r>=GetVisual()<CR>/")
+nnoremap_silent("<C-b>", "<cmd>call smooth_scroll#up(&scroll, 0, 2)<CR>zz")
+nnoremap_silent("<C-f>", "<cmd>call smooth_scroll#down(&scroll, 0, 2)<CR>zz")
 
 nnoremap_silent("H", "<cmd>silent <cmd>tabp<CR>")
 nnoremap_silent("L", "<cmd>silent <cmd>tabn<CR>")
