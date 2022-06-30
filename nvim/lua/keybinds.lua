@@ -1,8 +1,10 @@
 require("funcs.map_funcs")
 require("funcs.helpers")
 
+nnoremap("<Leader><space>", "<cmd>noh<CR>")
 vnoremap("<Leader><space>", "<cmd>noh<CR>")
 vnoremap("<Leader><Leader>", "y<ESC>/<C-r>\"<CR>")
+
 vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
 
 nnoremap("<Leader>tf", "<cmd>Telescope find_files<CR>")
