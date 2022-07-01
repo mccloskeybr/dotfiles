@@ -1,3 +1,5 @@
+require("funcs.map_funcs")
+
 local actions = require('telescope.actions')
 require('telescope').setup({
   defaults = {
@@ -31,5 +33,13 @@ require('telescope').setup({
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('ui-select')
 
--- function to call find_files in the project root if available.
+function telescope_opts()
+  -- cwd to project directory root if possible.
+  local current_file = vim.fn.expand('%')
+  local project_root = vim.fn.fnamemodify(current_file, ":p:h:s?croupier/.*?croupier/?")
+  local opts = { cwd = project_root }
+  return opts
+end
 
+nnoremap("<Leader>tf", "<cmd>lua require(\"telescope.builtin\").find_files(telescope_opts())<CR>")
+nnoremap("<Leader>tl", "<cmd>lua require(\"telescope.builtin\").live_grep(telescope_opts())<CR>")
