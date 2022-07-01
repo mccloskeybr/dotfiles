@@ -36,7 +36,7 @@ require('telescope').load_extension('ui-select')
 function telescope_opts()
   -- cwd to project directory root if possible.
   local current_file = vim.fn.expand('%')
-  local project_root = vim.fn.fnamemodify(current_file, ":p:h:s?croupier/.*?croupier/?")
+  local project_root = vim.fn.fnamemodify(current_file, ":p:h:s?/croupier/.*?/croupier/?")
   local opts = { cwd = project_root }
   return opts
 end
