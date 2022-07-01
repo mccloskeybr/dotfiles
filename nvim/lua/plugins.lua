@@ -8,7 +8,7 @@ Plug('Shougo/deoplete-lsp')                                     -- autocomplete
 Plug('Shougo/deoplete.nvim', {['do'] = ':UpdateRemotePlugins' })
 Plug('Yggdroot/indentLine')                                     -- show indent pairings
 Plug('Valloric/MatchTagAlways')                                 -- show matched tags
--- Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
+Plug('ntpeters/vim-better-whitespace')                          -- trailing whitespace
 Plug('tversteeg/registers.nvim')                                -- view y/p registers
 Plug('nvim-lualine/lualine.nvim')                               -- lua statusline
 Plug('mhinz/vim-signify')                                       -- visible hg changes
