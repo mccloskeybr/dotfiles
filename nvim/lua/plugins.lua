@@ -23,7 +23,7 @@ Plug('nvim-lua/plenary.nvim')                                   -- lua async mod
 Plug('nvim-telescope/telescope.nvim')                           -- out of file grep
 Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make' })
 Plug('nvim-telescope/telescope-ui-select.nvim')                 -- use sleek telescope ui
-Plug('phaazon/hop.nvim')                                        -- in-file jumping
+Plug('rlane/pounce.nvim')                                       -- in file jumps
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- syntax highlighting
 
 do_if_exists(os.getenv('HOME') .. '/.config/nvim/lua/local/plugins.lua')
