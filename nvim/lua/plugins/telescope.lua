@@ -1,4 +1,5 @@
 require("funcs.map_funcs")
+require("funcs.helpers")
 
 local actions = require('telescope.actions')
 require('telescope').setup({
@@ -33,13 +34,6 @@ require('telescope').setup({
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('ui-select')
 
-function telescope_opts()
-  -- cwd to project directory root if possible.
-  local current_file = vim.fn.expand('%')
-  local project_root = vim.fn.fnamemodify(current_file, ":p:h:s?/croupier/.*?/croupier/?")
-  local opts = { cwd = project_root }
-  return opts
-end
-
-nnoremap("<Leader>tf", "<cmd>lua require(\"telescope.builtin\").find_files(telescope_opts())<CR>")
-nnoremap("<Leader>tl", "<cmd>lua require(\"telescope.builtin\").live_grep(telescope_opts())<CR>")
+nnoremap("<Leader>tf", "<cmd>lua require(\"telescope.builtin\").find_files({ cwd = get_project_root() })<CR>")
+nnoremap("<Leader>tl", "<cmd>lua require(\"telescope.builtin\").live_grep({ cwd = get_project_root() })<CR>")
+vnoremap("<Leader>tl", "<cmd>lua require(\"telescope.builtin\").live_grep({ cwd = get_project_root(), default_text = get_visual_selection() })<CR>")

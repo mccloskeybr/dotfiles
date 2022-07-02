@@ -4,15 +4,15 @@ require("funcs.helpers")
 nnoremap("<Leader><space>", "<cmd>noh<CR>")
 vnoremap("<Leader><space>", "<cmd>noh<CR>")
 
-vnoremap("<Leader><Leader>", "y<ESC>/<C-r>\"<CR>")
+vnoremap_silent("*", "y<ESC>/<C-r>\"<CR>")
 
-vnoremap("<", "<gv")
-vnoremap(">", ">gv")
+vnoremap_silent("<", "<gv")
+vnoremap_silent(">", ">gv")
 
 vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
 
-nnoremap_silent("H", "<cmd>silent <cmd>tabp<CR>")
-nnoremap_silent("L", "<cmd>silent <cmd>tabn<CR>")
+nnoremap_silent("H", "<cmd>tabp<CR>")
+nnoremap_silent("L", "<cmd>tabn<CR>")
 nnoremap("<Leader>1", "1gt")
 nnoremap("<Leader>2", "2gt")
 nnoremap("<Leader>3", "3gt")

@@ -43,5 +43,5 @@ function nnoremap_silent(shortcut, command)
 end
 
 function vnoremap_silent(shortcut, command)
-  noremap(normal, shortcut, command, true)
+  noremap(visual, shortcut, command, true)
 end
