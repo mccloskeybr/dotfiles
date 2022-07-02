@@ -1,18 +1,20 @@
 require("funcs.io")
 require("funcs.map_funcs")
 
-nnoremap("<Leader><space>", "<cmd>noh<CR>")
-vnoremap("<Leader><space>", "<cmd>noh<CR>")
-
 vnoremap_silent("*", "\"vy<ESC>/<C-r>\"<CR>")
+nnoremap("<Leader><space>", "<cmd>noh<CR>")
 
 vnoremap_silent("<", "<gv")
 vnoremap_silent(">", ">gv")
 
+-- eases autocomplete suggestion selection
+inoremap_silent("<C-j>", "<Down>")
+inoremap_silent("<C-k>", "<Up>")
+
 vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
 
-nnoremap_silent("H", "<cmd>tabp<CR>")
-nnoremap_silent("L", "<cmd>tabn<CR>")
+nnoremap("H", "<cmd>tabp<CR>")
+nnoremap("L", "<cmd>tabn<CR>")
 nnoremap("<Leader>1", "1gt")
 nnoremap("<Leader>2", "2gt")
 nnoremap("<Leader>3", "3gt")

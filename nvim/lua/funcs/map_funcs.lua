@@ -34,12 +34,20 @@ function nnoremap(shortcut, command)
   noremap(normal, shortcut, command, false)
 end
 
+function inoremap(shortcut, command)
+  noremap(insert, shortcut, command, false)
+end
+
 function vnoremap(shortcut, command)
   noremap(visual, shortcut, command, false)
 end
 
 function nnoremap_silent(shortcut, command)
   noremap(normal, shortcut, command, true)
+end
+
+function inoremap_silent(shortcut, command)
+  noremap(insert, shortcut, command, true)
 end
 
 function vnoremap_silent(shortcut, command)
