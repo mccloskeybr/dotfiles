@@ -1,4 +1,4 @@
-require('funcs.helpers')
+require('funcs.io')
 
 local Plug = vim.fn['plug#']
 vim.fn['plug#begin']('~/.config/nvim/plugged')

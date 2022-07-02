@@ -1,4 +1,4 @@
-require("funcs.helpers")
+require("funcs.io")
 
 vim.o.encoding = "utf-8"
 vim.o.background = "dark"

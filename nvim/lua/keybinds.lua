@@ -1,10 +1,10 @@
+require("funcs.io")
 require("funcs.map_funcs")
-require("funcs.helpers")
 
 nnoremap("<Leader><space>", "<cmd>noh<CR>")
 vnoremap("<Leader><space>", "<cmd>noh<CR>")
 
-vnoremap_silent("*", "y<ESC>/<C-r>\"<CR>")
+vnoremap_silent("*", "\"vy<ESC>/<C-r>\"<CR>")
 
 vnoremap_silent("<", "<gv")
 vnoremap_silent(">", ">gv")
