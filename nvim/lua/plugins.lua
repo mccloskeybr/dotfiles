@@ -17,7 +17,6 @@ Plug('tversteeg/registers.nvim')                                -- view y/p regi
 Plug('nvim-lualine/lualine.nvim')                               -- lua statusline
 Plug('mhinz/vim-signify')                                       -- visible hg changes
 Plug('startup-nvim/startup.nvim')                               -- startup screen
-Plug('machakann/vim-highlightedyank')                           -- highlighted yank
 Plug('haya14busa/vim-poweryank')                                -- yank over ssh
 Plug('terryma/vim-smooth-scroll')                               -- smooth scroll
 Plug('christoomey/vim-tmux-navigator')                          -- vim/tmux navigation

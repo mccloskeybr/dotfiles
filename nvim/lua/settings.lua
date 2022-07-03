@@ -40,4 +40,16 @@ vim.o.swapfile = false
 vim.o.undodir = os.getenv("HOME") .. "/.config/nvim/undo"
 vim.o.backupdir = os.getenv("HOME") .. "/.config/nvim/backup"
 
+vim.api.nvim_create_augroup("highlight_yank", {
+  clear = true,
+})
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = "highlight_yank",
+  pattern = "*",
+  callback = function()
+    require("vim.highlight").on_yank({ timeout = 500 })
+  end,
+  once = true,
+})
+
 do_if_exists(os.getenv("HOME") .. "/.config/nvim/lua/local/settings.lua")
