@@ -8,16 +8,6 @@ require('telescope').setup({
     layout_config = {
       width = 0.75
     },
-    mappings = {
-      i = {
-        ['<C-j>'] = actions.move_selection_next,
-        ['<C-k>'] = actions.move_selection_previous,
-      },
-      n = {
-        ['<C-j>'] = actions.move_selection_next,
-        ['<C-k>'] = actions.move_selection_previous,
-      },
-    },
   },
   extensions = {
     ['fzf'] = {

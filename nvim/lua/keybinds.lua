@@ -7,10 +7,6 @@ nnoremap("<Leader><space>", "<cmd>noh<CR>")
 vnoremap_silent("<", "<gv")
 vnoremap_silent(">", ">gv")
 
--- eases autocomplete suggestion selection
-inoremap_silent("<C-j>", "<Down>")
-inoremap_silent("<C-k>", "<Up>")
-
 vmap("<C-c>", "<Plug>(operator-poweryank-osc52)")
 
 nnoremap("H", "<cmd>tabp<CR>")
