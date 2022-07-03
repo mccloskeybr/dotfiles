@@ -1,7 +1,6 @@
 require("funcs.map_funcs")
 require("funcs.helpers")
 
-local actions = require('telescope.actions')
 require('telescope').setup({
   defaults = {
     layout_strategy = 'vertical',

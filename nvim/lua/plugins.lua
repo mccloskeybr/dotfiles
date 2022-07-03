@@ -25,6 +25,7 @@ Plug('nvim-lua/plenary.nvim')                                   -- lua async mod
 Plug('nvim-telescope/telescope.nvim')                           -- telescope
 Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make' })
 Plug('nvim-telescope/telescope-ui-select.nvim')
+Plug('ThePrimeagen/harpoon')                                    -- better vim marks
 Plug('rlane/pounce.nvim')                                       -- better search motions
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- syntax highlighting
 
