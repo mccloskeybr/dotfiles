@@ -17,3 +17,6 @@
   path = dotbot
   url = https://github.com/anishathalye/dotbot
   ignore = dirty
+[submodule "alacritty/fonts/nerd-fonts"]
+	path = alacritty/fonts/nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts

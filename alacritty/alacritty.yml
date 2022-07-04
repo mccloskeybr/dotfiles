@@ -25,16 +25,16 @@ scrolling:
 
 font:
   normal:
-    family: monospace
+    family: "mononoki"
     style: Regular
   bold:
-    family: monospace
+    family: "mononoki"
     style: Bold
   italic:
-    family: monospace
+    family: "mononoki"
     style: Italic
   bold_italic:
-    family: monospace
+    family: "mononoki"
     style: Bold Italic
   size: 11.0
 

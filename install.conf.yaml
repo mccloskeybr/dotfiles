@@ -11,7 +11,7 @@
 - link:
     ~/.config/nvim: nvim
     ~/.config/i3: i3
-    ~/.config/alacritty: profiles/alacritty
+    ~/.config/alacritty: alacritty
     ~/.zshrc: zsh/zshrc
     ~/.zsh: zsh
     ~/.tmux.conf: tmux/tmux.conf
