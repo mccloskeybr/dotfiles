@@ -26,13 +26,3 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
-
-# custom plugins
-# ==============
-# requires sqlite3
-# use drewis/go-histdbimport to import existing history
-source ~/.zsh/custom_plugins/zsh-histdb/sqlite-history.zsh
-autoload -Uz add-zsh-hook
-
-# load fzf binds
-source ~/.fzf.zsh
