@@ -1,28 +1,26 @@
-local ascii_doom = {
-  "=================     ===============     ===============   ========  ========",
-  "\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
-  "|. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
-  "| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-  "|. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-  "| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
-  "|. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
-  "| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
-  "|_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
-  "|    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
-  "|    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
-  "|            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
-  "|         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
-  "|      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
-  "|   .=='    _-'          `-__\\._-'         `-_./__-'         `' |. /|  |   ||",
-  "|.=='    _-'                                                     `' |  /==.||",
-  "=='    _-'                                                            \\/   `==",
-  "\\   _-'                                                                `-_   /",
-  " `''                                                                      ``'"
+local banner = {
+  " _____     ______     ______   ______     __  __     __         ______  ",
+  "/\\  __-.  /\\  ___\\   /\\  ___\\ /\\  __ \\   /\\ \\/\\ \\   /\\ \\       /\\__  _\\ ",
+  "\\ \\ \\/\\ \\ \\ \\  __\\   \\ \\  __\\ \\ \\  __ \\  \\ \\ \\_\\ \\  \\ \\ \\____  \\/_/\\ \\/ ",
+  " \\ \\____-  \\ \\_____\\  \\ \\_\\    \\ \\_\\ \\_\\  \\ \\_____\\  \\ \\_____\\    \\ \\_\\ ",
+  "  \\/____/   \\/_____/   \\/_/     \\/_/\\/_/   \\/_____/   \\/_____/     \\/_/ "
 }
+
+vim.g.startup_bookmarks = {
+  ["q"] = '~/.dotfiles/',
+  ["w"] = '~/.dotfiles/nvim/',
+}
+
+bookmark_text = { }
+bookmark_mappings = {}
+for key, file in pairs(vim.g.startup_bookmarks) do
+    bookmark_text[#bookmark_text + 1] = "[" .. key .. "] " .. file
+    bookmark_mappings[key] = "<cmd>e " .. file .. "<CR>"
+end
 
 local function clock()
   local clock = os.date "< %m-%d-%y  :::  %H:%M:%S >"
-  return { clock }
+  return clock
 end
 
 require("startup").setup({
@@ -33,7 +31,7 @@ require("startup").setup({
     title = "Time",
     highlight = "Statement",
     default_color = "",
-    content = clock(),
+    content = { clock() },
   },
   title = {
     type = "text",
@@ -42,25 +40,33 @@ require("startup").setup({
     title = "Title",
     highlight = "Statement",
     default_color = "",
-    content = ascii_doom,
+    content = banner,
   },
-  oldfiles = {
-    type = "oldfiles",
+  quote = {
+    type = "text",
     align = "center",
     fold_section = false,
-    title = "Oldfiles",
-    highlight = "String",
+    title = "Quote",
+    margin = 5,
+    highlight = "Statement",
     default_color = "",
-    oldfiles_directory = false,
-    oldfiles_amount = 10,
+    content =  require("startup.functions").quote(),
   },
-  parts = { "clock", "title", "oldfiles" },
+  bookmarks = {
+    type = "text",
+    align = "center",
+    fold_section = false,
+    title = "Bookmarks",
+    highlight = "String",
+    content = bookmark_text,
+  },
+  parts = { "clock", "title", "quote", "bookmarks" },
   options = {
     after = function()
-      require("startup.utils").oldfiles_mappings()
+      require("startup").create_mappings(bookmark_mappings)
     end,
     mapping_keys = true,
-    paddings = { 5, 1, 5 },
+    paddings = { 5, 3, 3, 5 },
   },
   mappings = {
     execute_command = "<CR>",
