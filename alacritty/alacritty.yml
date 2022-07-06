@@ -25,16 +25,16 @@ scrolling:
 
 font:
   normal:
-    family: "mononoki"
+    family: "mononoki Nerd Font"
     style: Regular
   bold:
-    family: "mononoki"
+    family: "mononoki Nerd Font"
     style: Bold
   italic:
-    family: "mononoki"
+    family: "mononoki Nerd Font"
     style: Italic
   bold_italic:
-    family: "mononoki"
+    family: "mononoki Nerd Font"
     style: Bold Italic
   size: 11.0
 
