@@ -1,5 +1,6 @@
 - defaults:
     link:
+      create: true
       relink: true
 
 - clean:
@@ -10,8 +11,10 @@
 
 - link:
     ~/.config/nvim: nvim
-    ~/.config/i3: i3
     ~/.config/alacritty: alacritty
+    ~/.config/i3: wm/i3
+    ~/.config/yabai/yabairc: wm/yabai/yabairc
+    ~/.config/skhd/skhdrc: wm/yabai/skhdrc
     ~/.zshrc: zsh/zshrc
     ~/.zsh: zsh
     ~/.tmux.conf: tmux/tmux.conf
