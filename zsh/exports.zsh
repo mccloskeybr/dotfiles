@@ -25,7 +25,6 @@ export FZF_DEFAULT_OPTS=" \
 ZSH_DISABLE_COMPFIX="true"
 
 PATH=$PATH:$HOME/bin
-
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
 PATH=$PATH:/usr/local/bin

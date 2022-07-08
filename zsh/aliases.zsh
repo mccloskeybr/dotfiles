@@ -9,6 +9,3 @@ alias h=hg
 alias v=nvim
 
 alias gchat='exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi'
-
-alias history=histdb
-
