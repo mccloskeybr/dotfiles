@@ -11,11 +11,17 @@ vim.g.startup_bookmarks = {
   ["w"] = '~/.dotfiles/nvim/',
 }
 
-bookmark_text = { }
-bookmark_mappings = {}
+local bookmark_line_length = 30
+local bookmark_text = { }
+local bookmark_mappings = {}
 for key, file in pairs(vim.g.startup_bookmarks) do
-    bookmark_text[#bookmark_text + 1] = "[" .. key .. "] " .. file
-    bookmark_mappings[key] = "<cmd>e " .. file .. "<CR>"
+  local key_text = "[" .. key .. "]"
+  local text_length = string.len(key_text .. file)
+  bookmark_text[#bookmark_text + 1] =
+    key_text ..
+    string.rep(" ", bookmark_line_length - text_length) ..
+    file
+  bookmark_mappings[key] = "<cmd>e " .. file .. "<CR>"
 end
 
 local function clock()
@@ -60,13 +66,24 @@ require("startup").setup({
     highlight = "String",
     content = bookmark_text,
   },
-  parts = { "clock", "title", "quote", "bookmarks" },
+  oldfiles = {
+    type = "oldfiles",
+    align = "center",
+    fold_section = false,
+    title = "Oldfiles",
+    highlight = "String",
+    default_color = "",
+    oldfiles_directory = false,
+    oldfiles_amount = 10,
+  },
+  parts = { "clock", "title", "quote", "bookmarks", "oldfiles" },
   options = {
     after = function()
+      require("startup.utils").oldfiles_mappings()
       require("startup").create_mappings(bookmark_mappings)
     end,
     mapping_keys = true,
-    paddings = { 5, 3, 3, 5 },
+    paddings = { 5, 3, 3, 5, 3 },
   },
   mappings = {
     execute_command = "<CR>",
