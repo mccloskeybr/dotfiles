@@ -9,7 +9,7 @@ require('packer').use({
     {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
   },
   config = function()
-	  require('telescope').setup({
+    require('telescope').setup({
       defaults = {
         layout_strategy = 'vertical',
         layout_config = {

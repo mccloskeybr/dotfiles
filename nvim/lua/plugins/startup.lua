@@ -15,8 +15,8 @@ banner = {
 }
 
 require('packer').use({
-	'startup-nvim/startup.nvim',
-	config = function()
+  'startup-nvim/startup.nvim',
+  config = function()
     local bookmark_text = { }
     local bookmark_mappings = {}
     for key, file in pairs(vim.g.startup_bookmarks) do
@@ -96,5 +96,5 @@ require('packer').use({
         open_help = '?',
       },
     })
-	end
+  end
 })

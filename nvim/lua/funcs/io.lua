@@ -16,8 +16,10 @@ end
 
 -- maybe not as elegant as LFS but i don't want to install a lib for this lol
 function do_all_in_directory(dir)
-  local p = io.popen('find "'..dir..'" -type f')
-  for file in p:lines() do
-      dofile(file)
+  if file_exists(dir) then
+    local p = io.popen('find "'.. dir ..'" -type f')
+    for file in p:lines() do
+        dofile(file)
+    end
   end
 end
