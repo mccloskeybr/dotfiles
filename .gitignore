@@ -1,7 +1,7 @@
 # don't include local configs
 *local*
 
-nvim/plugged
+nvim/plugin
 nvim/undo
 nvim/backup
 
