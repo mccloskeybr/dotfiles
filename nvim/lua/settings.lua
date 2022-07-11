@@ -51,4 +51,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-do_if_exists(vim.fn.stdpath('config') .. 'lua/local/settings.lua')
+do_if_exists(vim.fn.stdpath('config') .. '/lua/local/settings.lua')
