@@ -5,7 +5,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
 alias grep='grep --color=auto'
-alias h=hg
-alias v=nvim
+alias h='hg'
+alias v='nvim'
+alias mv='vim --clean'
 
 alias gchat='exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi'
