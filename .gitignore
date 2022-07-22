@@ -5,7 +5,7 @@ nvim/plugin
 nvim/undo
 nvim/backup
 
-hg/blackbox.log
+hg/blackbox.log*
 hg/dirstate
 hg/wcache
 

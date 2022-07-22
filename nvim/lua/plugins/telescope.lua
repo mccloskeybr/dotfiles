@@ -53,6 +53,5 @@ require('packer').use({
     nnoremap('<Leader>td', '<cmd>lua require(\'telescope.builtin\').lsp_definitions()<CR>')
     nnoremap('<Leader>tb', '<cmd>lua require(\'telescope.builtin\').buffers()<CR>')
     nnoremap('<Leader>to', '<cmd>lua require(\'telescope.builtin\').oldfiles()<CR>')
-    nnoremap('<Leader>tr', '<cmd>lua require(\'telescope.builtin\').resume()<CR>')
   end
 })
