@@ -22,7 +22,7 @@ vim.o.ignorecase = true       -- ignore case
 vim.o.smartcase = true        -- remember prev searches
 
 vim.o.autoread = true         -- auto reload file on change
-vim.o.laststatus = 2          -- always display status line
+vim.o.laststatus = 3          -- always display status line
 
 vim.o.number = true           -- numbered lines
 vim.o.ruler = true            -- show current row, col, etc.
