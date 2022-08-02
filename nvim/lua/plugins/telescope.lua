@@ -11,6 +11,7 @@ require('packer').use({
   config = function()
     require('telescope').setup({
       defaults = {
+        dynamic_preview_title = true,
         layout_strategy = 'vertical',
         layout_config = {
           width = 0.75
@@ -44,7 +45,6 @@ require('packer').use({
     nnoremap('<Leader>tl', '<cmd>lua require("telescope.builtin").live_grep({' ..
       'cwd = get_project_root(),' ..
       'path_display = {"shorten"}' ..
-      -- 'dynamic_preview_title = true' ..
       '})<CR>')
     vnoremap('<Leader>tl', '<cmd>lua require("telescope.builtin").live_grep({' ..
       'cwd = get_project_root(),' ..
