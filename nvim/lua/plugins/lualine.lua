@@ -1,14 +1,6 @@
-local winbar_config = {
-  lualine_a = {},
-  lualine_b = {},
-  lualine_c = {'filename', path = 1},
-  lualine_x = {'encoding'},
-  lualine_y = {},
-  lualine_z = {}
-}
-
 require('packer').use({
   'nvim-lualine/lualine.nvim',
+  commit = '5f68f070e4f7158517afc55f125a6f5ed1f7db47',
   config = function()
     require('lualine').setup({
       options = {
