@@ -37,15 +37,18 @@ require('packer').use({
       '})<CR>')
     vnoremap('<Leader>tf', '<cmd>lua require("telescope.builtin").find_files({' ..
       'cwd = get_project_root(),' ..
-      'default_text = get_visual_selection(),' ..
-      'previewer = false' ..
+      'previewer = false,' ..
+      'default_text = get_visual_selection()' ..
       '})<CR>')
 
     nnoremap('<Leader>tl', '<cmd>lua require("telescope.builtin").live_grep({' ..
-      'cwd = get_project_root()' ..
+      'cwd = get_project_root(),' ..
+      'path_display = {"shorten"}' ..
+      -- 'dynamic_preview_title = true' ..
       '})<CR>')
     vnoremap('<Leader>tl', '<cmd>lua require("telescope.builtin").live_grep({' ..
       'cwd = get_project_root(),' ..
+      'path_display = {"shorten"},' ..
       'default_text = get_visual_selection()' ..
       '})<CR>')
 
