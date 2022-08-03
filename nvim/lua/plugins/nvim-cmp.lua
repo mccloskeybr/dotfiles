@@ -17,7 +17,8 @@ require('packer').use({
         documentation = require('cmp').config.window.bordered(),
       },
       mapping = require('cmp').mapping.preset.insert({
-        ['<CR>'] = require('cmp').mapping.confirm({ select = true }),
+        ['<C-y>'] = require('cmp').mapping.confirm({ select = true }),
+        ["<C-Space>"] = require('cmp').mapping.complete(),
       }),
       sources = require('cmp').config.sources({
         { name = 'nvim_lsp' },
