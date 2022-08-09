@@ -30,13 +30,13 @@ require('packer').use({
       },
       winbar = {
         lualine_a = {},
-        lualine_b = {},
-        lualine_c = {
+        lualine_b = {
           {
             'filename',
             path = 1,
           },
         },
+        lualine_c = {},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {},
         lualine_z = {}
