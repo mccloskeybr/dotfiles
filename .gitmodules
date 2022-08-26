@@ -1,9 +1,6 @@
 [submodule "tmux/plugins/tpm"]
   path = tmux/plugins/tpm
   url = https://github.com/tmux-plugins/tpm
-[submodule "tmux/plugins/tmux-cpu"]
-  path = tmux/plugins/tmux-cpu
-  url = https://github.com/tmux-plugins/tmux-cpu
 [submodule "tmux/plugins/tmux-sensible"]
   path = tmux/plugins/tmux-sensible
   url = https://github.com/tmux-plugins/tmux-sensible
@@ -13,6 +10,9 @@
 [submodule "tmux/plugins/vim-tmux-navigator"]
   path = tmux/plugins/vim-tmux-navigator
   url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "tmux/plugins/tmux-mem-cpu-load"]
+  path = tmux/plugins/tmux-mem-cpu-load
+  url = https://github.com/thewtex/tmux-mem-cpu-load
 [submodule "dotbot"]
   path = dotbot
   url = https://github.com/anishathalye/dotbot
