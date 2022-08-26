@@ -13,6 +13,7 @@
     ~/.config/nvim: nvim
     ~/.config/alacritty: alacritty
     ~/.config/i3: wm/i3
+    ~/.config/i3status: wm/i3status
     ~/.config/yabai/yabairc: wm/yabai/yabairc
     ~/.config/skhd/skhdrc: wm/yabai/skhdrc
     ~/.zshrc: zsh/zshrc
