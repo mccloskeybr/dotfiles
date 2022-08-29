@@ -6,6 +6,7 @@ require('packer').use({
   requires = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
+    {'nvim-telescope/telescope-frecency.nvim', requires = {'tami5/sqlite.lua'}},
     {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
   },
   config = function()
@@ -26,11 +27,15 @@ require('packer').use({
         },
         ['ui-select'] = {
           require('telescope.themes').get_dropdown({})
-        }
+        },
+        ['frecency'] = {
+          show_scores = true,
+        },
       }
     })
     require('telescope').load_extension('fzf')
     require('telescope').load_extension('ui-select')
+    require('telescope').load_extension('frecency')
 
     nnoremap('<Leader>tf', '<cmd>lua require("telescope.builtin").find_files({' ..
       'cwd = get_project_root(),' ..
@@ -55,6 +60,6 @@ require('packer').use({
     nnoremap('<Leader>tr', '<cmd>lua require("telescope.builtin").lsp_references()<CR>')
     nnoremap('<Leader>td', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>')
     nnoremap('<Leader>tb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
-    nnoremap('<Leader>to', '<cmd>lua require("telescope.builtin").oldfiles()<CR>')
+    nnoremap('<Leader>tF', '<cmd>lua require("telescope").extensions.frecency.frecency()<CR>')
   end
 })
