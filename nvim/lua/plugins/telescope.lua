@@ -14,9 +14,6 @@ require('packer').use({
       defaults = {
         dynamic_preview_title = true,
         layout_strategy = 'vertical',
-        layout_config = {
-          width = 0.75
-        },
       },
       extensions = {
         ['fzf'] = {
