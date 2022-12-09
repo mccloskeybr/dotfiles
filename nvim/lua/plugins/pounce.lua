@@ -3,8 +3,8 @@ require('funcs.map_funcs')
 require('packer').use({
   'rlane/pounce.nvim',
   config = function()
-    nmap('s', '<cmd>Pounce<CR>')
-    vmap('s', '<cmd>Pounce<CR>')
-    nmap('S', '<cmd>PounceRepeat<CR>')
+    nmap('<Leader>s', '<cmd>Pounce<CR>')
+    vmap('<Leader>s', '<cmd>Pounce<CR>')
+    nmap('<Leader>S', '<cmd>PounceRepeat<CR>')
   end
 })

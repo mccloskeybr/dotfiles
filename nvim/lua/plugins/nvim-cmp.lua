@@ -21,8 +21,8 @@ require('packer').use({
         ["<C-Space>"] = require('cmp').mapping.complete(),
       }),
       sources = require('cmp').config.sources({
-        { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'nvim_lsp' },
         { name = 'buffer' },
       }),
     })
