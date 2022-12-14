@@ -1,9 +1,13 @@
 require('packer').use({
   'tversteeg/registers.nvim',
   config = function()
+    require('registers').setup({
+      window = {
+        border = "rounded",
+        min_heigh = 15,
+        max_width = 100,
+      },
+    })
     vim.cmd('hi RegistersWindow ctermbg=black')
-    vim.g.registers_window_border = 'rounded'
-    vim.g.registers_window_min_height = 15
-    vim.g.registers_window_max_width = 100
   end
 })
