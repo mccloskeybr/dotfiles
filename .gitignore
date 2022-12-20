@@ -1,5 +1,6 @@
 # don't include local configs
 *local*
+!nvim/after/plugin/local.lua
 
 nvim/plugin
 nvim/undo
