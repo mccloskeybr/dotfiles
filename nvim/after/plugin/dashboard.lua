@@ -10,7 +10,6 @@ require('packer').use({
       ' \\ \\____-  \\ \\_____\\  \\ \\_\\    \\ \\_\\ \\_\\  \\ \\_____\\  \\ \\_____\\    \\ \\_\\ ',
       '  \\/____/   \\/_____/   \\/_/     \\/_/\\/_/   \\/_____/   \\/_____/     \\/_/ '
     }
-    db.custom_header = dashboard_header
     db.custom_center = {
       { desc = 'Find file', action = 'Telescope find_files' },
       { desc = 'Live grep', action = 'Telescope live_grep' },
