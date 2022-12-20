@@ -7,13 +7,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').init()
-
--- packer self-manages
 require('packer').use({'wbthomason/packer.nvim'})
-
--- load plugin configurations
-do_all_in_directory(vim.fn.stdpath('config') .. '/lua/plugins/')
-do_all_in_directory(vim.fn.stdpath('config') .. '/lua/local/plugins')
 
 if packer_bootstrap then
   require('packer').sync()
