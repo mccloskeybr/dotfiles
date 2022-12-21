@@ -1,5 +1,5 @@
-require('funcs.io')
-require('funcs.map_funcs')
+require('default.funcs.io')
+require('default.funcs.map_funcs')
 
 vnoremap_silent('*', '\'vy<ESC>/<C-r>\'<CR>')
 nnoremap('<Leader><space>', '<cmd>noh<CR>')

@@ -1,4 +1,4 @@
-require('funcs.map_funcs')
+require('default.funcs.map_funcs')
 
 require('packer').use({
   'karb94/neoscroll.nvim',

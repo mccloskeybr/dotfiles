@@ -1,4 +1,4 @@
-require('funcs.io')
+require('default.funcs.io')
 
 vim.o.encoding = 'utf-8'
 vim.o.termguicolors = true

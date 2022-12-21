@@ -1,5 +1,5 @@
-require('funcs.map_funcs')
-require('funcs.helpers')
+require('default.funcs.map_funcs')
+require('default.funcs.helpers')
 
 require('packer').use({
   'nvim-telescope/telescope.nvim',

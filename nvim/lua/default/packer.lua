@@ -1,5 +1,5 @@
-require('funcs.io')
-require('funcs.map_funcs')
+require('default.funcs.io')
+require('default.funcs.map_funcs')
 
 -- bootstrap packer if not installed
 local install_path = vim.fn.stdpath('data') ..'/site/pack/packer/start/packer.nvim'
