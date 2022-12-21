@@ -18,9 +18,9 @@ require('packer').use({
     }
     db.custom_footer = { #vim.tbl_keys(packer_plugins) .. ' plugins loaded.' }
 
-    vim.cmd('hi DashboardHeader ctermfg=167')
-    vim.cmd('hi DashboardCenter ctermfg=grey')
-    vim.cmd('hi DashboardFooter ctermfg=239')
+    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#C73846'})
+    vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = '#81A284' })
+    vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#8A6A6A' })
 
     db.header_pad = 20
     db.center_pad = 3
