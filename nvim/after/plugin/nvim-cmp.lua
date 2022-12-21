@@ -6,6 +6,33 @@ require('packer').use({
     'saadparwaiz1/cmp_luasnip',
   },
   config = function()
+    local kind_icons = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = "",
+      File = "",
+      Reference = "",
+      Folder = "",
+      EnumMember = "",
+      Constant = "",
+      Struct = "",
+      Event = "",
+      Operator = "",
+      TypeParameter = ""
+    }
     require('cmp').setup({
       snippet = {
         expand = function(args)
@@ -25,6 +52,17 @@ require('packer').use({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
       }),
+      formatting = {
+        format = function(entry, vim_item)
+          vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+          vim_item.menu = ({
+            luasnip = "[LuaSnip]",
+            nvim_lsp = "[LSP]",
+            buffer = "[Buffer]",
+          })[entry.source.name]
+          return vim_item
+        end
+      },
     })
   end
 })
