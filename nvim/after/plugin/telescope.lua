@@ -34,8 +34,6 @@ require('packer').use({
     require('telescope').load_extension('ui-select')
     require('telescope').load_extension('frecency')
 
-    vim.cmd('hi TelescopeNormal ctermbg=black')
-
     nnoremap('<Leader>tf', '<cmd>lua require("telescope.builtin").find_files({' ..
       'cwd = get_project_root(),' ..
       'previewer = false' ..
