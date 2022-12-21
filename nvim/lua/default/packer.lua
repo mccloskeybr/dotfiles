@@ -1,4 +1,5 @@
 require('funcs.io')
+require('funcs.map_funcs')
 
 -- bootstrap packer if not installed
 local install_path = vim.fn.stdpath('data') ..'/site/pack/packer/start/packer.nvim'
@@ -12,3 +13,6 @@ require('packer').use({'wbthomason/packer.nvim'})
 if packer_bootstrap then
   require('packer').sync()
 end
+
+-- reload config without restarting.
+nnoremap('<Leader>R', ':so $MYVIMRC<CR>:PackerCompile<CR>')
