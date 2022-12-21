@@ -11,10 +11,12 @@ require('packer').use({
       '  \\/____/   \\/_____/   \\/_/     \\/_/\\/_/   \\/_____/   \\/_____/     \\/_/ '
     }
     db.custom_center = {
-      { desc = 'Find file', action = 'Telescope find_files' },
-      { desc = 'Live grep', action = 'Telescope live_grep' },
+      { desc = 'Find File', icon = '   ', action = 'Telescope find_files' },
+      { desc = 'Live Grep', icon = '   ', action = 'Telescope live_grep' },
+      { desc = 'Dotfiles', icon = '    ', action = 'e ~/.dotfiles' },
+      { desc = 'Quit', icon = '        ', action = 'qa!' },
     }
-    db.custom_footer = { 'Number of plugins: ' .. #vim.tbl_keys(packer_plugins) }
+    db.custom_footer = { #vim.tbl_keys(packer_plugins) .. ' plugins loaded.' }
 
     vim.cmd('hi DashboardHeader ctermfg=167')
     vim.cmd('hi DashboardCenter ctermfg=grey')
