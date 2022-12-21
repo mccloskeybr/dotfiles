@@ -9,6 +9,7 @@ nvim/backup
 hg/blackbox.log*
 hg/dirstate
 hg/wcache
+hg/undo*
 
 # bin scripts need to be allowlisted
 bin/*
