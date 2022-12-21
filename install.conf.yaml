@@ -22,6 +22,7 @@
     ~/.tmux: tmux
     ~/.hgrc: hg/hgrc
     ~/.hg: hg
+    ~/bin: bin
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

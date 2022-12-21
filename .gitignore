@@ -17,3 +17,4 @@ bin/*/
 !bin/dotfiles_install.sh
 !bin/dotfiles_update.sh
 !bin/startup.sh
+!bin/pokemon-colorscripts*

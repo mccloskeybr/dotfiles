@@ -20,3 +20,6 @@
 [submodule "alacritty/fonts/nerd-fonts"]
   path = alacritty/fonts/nerd-fonts
   url = https://github.com/ryanoasis/nerd-fonts
+[submodule "bin/pokemon-colorscripts"]
+	path = bin/pokemon-colorscripts
+	url = https://gitlab.com/phoneybadger/pokemon-colorscripts.git

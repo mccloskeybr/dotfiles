@@ -1,3 +1,3 @@
 #!/bin/bash
 
-neofetch
+pokemon-colorscripts.py --random --no-title
