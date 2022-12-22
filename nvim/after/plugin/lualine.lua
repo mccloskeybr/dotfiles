@@ -7,7 +7,7 @@ require('packer').use({
       teal = '#598291',
       gold = '#eec686',
       beige = '#eaead2',
-      crimson  = '#d92638',
+      crimson  = '#d2606b',
       black_coffee = '#251d1d',
       cream_coffee = '#564343',
     }
