@@ -1,5 +1,6 @@
 require('packer').use({
   'glepnir/dashboard-nvim',
+  requires = { 'mccloskeybr/autumn-nvim' },
   config = function()
     local db = require('dashboard')
     db.custom_header =  {
@@ -19,9 +20,10 @@ require('packer').use({
     }
     db.custom_footer = { #vim.tbl_keys(packer_plugins) .. ' plugins loaded.' }
 
-    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#C73846'})
-    vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = '#81A284' })
-    vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#8A6A6A' })
+    local colors = require('autumn-nvim.colors').setup()
+    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = colors.rose.hex })
+    vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = colors.sage.hex })
+    vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = colors.cream_coffee.hex })
 
     db.header_pad = 20
     db.center_pad = 3
