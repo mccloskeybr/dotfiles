@@ -55,47 +55,47 @@ mouse:
   triple_click: { threshold: 300 }
   hide_when_typing: false
 
+theme: Autumn
 colors:
   primary:
-    #background: '#1b1b1b'
-    background: '#241c1c'
-    foreground: '#c5c8c6'
+    background: '#251d1d'
+    foreground: '#eaead2'
   cursor:
     text: CellBackground
     cursor: CellForeground
-  search:                   # search bar and match highlighting
+  search:
     matches:
-      foreground: '#000000'
-      background: '#ffffff'
+      foreground: '#eec686' # gold
+      background: '#251d1d'
     focused_match:
-      foreground: '#ffffff'
-      background: '#000000'
+      foreground: '#f98948' # mango
+      background: '#251d1d'
     bar:
-      background: '#c5c8c6'
-      foreground: '#1d1f21'
+      background: '#eaead2'
+      foreground: '#251d1d'
   selection:
     text: CellBackground
     background: CellForeground
 
   normal:
-    black:   '#313131'
-    red:     '#964040'
-    green:   '#b75050'
-    yellow:  '#dd6060'
-    blue:    '#fe7171'
-    magenta: '#e6a5a5'
-    cyan:    '#c79797'
-    white:   '#f7f7f7'
+    black:   '#564343' # coffee
+    red:     '#d2606b' # crimson
+    green:   '#90ad92' # mint
+    yellow:  '#eec686' # gold
+    blue:    '#be8a60' # brass
+    magenta: '#f98948' # mango
+    cyan:    '#598291' # teal
+    white:   '#eaead2' # beige
 
   bright:
-    black:   '#6f8184'
-    red:     '#964040'
-    green:   '#b75050'
-    yellow:  '#dd6060'
-    blue:    '#fe7171'
-    magenta: '#e6a5a5'
-    cyan:    '#c79797'
-    white:   '#f7f7f7'
+    black:   '#564343' # coffee
+    red:     '#d2606b' # crimson
+    green:   '#90ad92' # mint
+    yellow:  '#eec686' # gold
+    blue:    '#be8a60' # brass
+    magenta: '#f98948' # mango
+    cyan:    '#598291' # teal
+    white:   '#eaead2' # beige
 
 key_bindings:
   - { key: Paste, action: Paste }
@@ -364,4 +364,3 @@ key_bindings:
       mods: Control,
       action: DecreaseFontSize
     }
-theme: Baskerville - Count Von Count
