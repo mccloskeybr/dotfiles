@@ -94,12 +94,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # colors
-set $background     #1b1b1b
-set $foreground     #fe7171
+set $background     #251d1d
+set $foreground     #d2606b
 set $highlight      #FFFF00
-set $text_hi        #313131
-set $text_lo        #6f8184
-set $indicator      #c79797
+set $text_hi        #251d1d
+set $text_lo        #564343
+set $indicator      #be8a60
 
 #                       border      background  text      indicator
 client.focused          $foreground $foreground $text_hi  $indicator
