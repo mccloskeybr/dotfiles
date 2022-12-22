@@ -2,12 +2,37 @@ require('packer').use({
   'nvim-lualine/lualine.nvim',
   commit = '5f68f070e4f7158517afc55f125a6f5ed1f7db47',
   config = function()
+    local colors = {
+      mint = '#648767',
+      teal = '#598291',
+      gold = '#eec686',
+      beige = '#eaead2',
+      crimson  = '#d92638',
+      black_coffee = '#251d1d',
+      cream_coffee = '#564343',
+    }
+    local autumn_theme = {
+      normal = {
+        a = { fg = colors.black_coffee, bg = colors.mint },
+        b = { fg = colors.gold, bg = colors.cream_coffee },
+        c = { fg = colors.gold, bg = colors.black_coffee },
+      },
+      insert = { a = { fg = colors.black_coffee, bg = colors.teal } },
+      visual = { a = { fg = colors.black_coffee, bg = colors.crimson } },
+      replace = { a = { fg = colors.black_coffee, bg = colors.gold } },
+      inactive = {
+        a = { fg = colors.beige, bg = colors.cream_coffee },
+        b = { fg = colors.gold, bg = colors.black_coffee },
+        c = { fg = colors.cream_coffee, bg = colors.black_coffee },
+      },
+    }
+
     require('lualine').setup({
       options = {
         icons_enabled = true,
-        theme = 'gruvbox-material',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        theme = autumn_theme,
+        component_separators = '|',
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = { 'startup' },
           winbar = { 'startup' },
@@ -37,8 +62,8 @@ require('packer').use({
           },
         },
         lualine_c = {},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {},
+        lualine_x = {},
+        lualine_y = {'encoding', 'fileformat', 'filetype'},
         lualine_z = {}
       },
       inactive_winbar = {
