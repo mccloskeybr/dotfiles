@@ -13,6 +13,7 @@ require('packer').use({
     db.custom_center = {
       { desc = 'Find File', icon = '   ', action = 'Telescope find_files' },
       { desc = 'Live Grep', icon = '   ', action = 'Telescope live_grep' },
+      { desc = 'Old Files', icon = '   ', action = 'Telescope oldfiles' },
       { desc = 'Dotfiles', icon = '    ', action = 'e ~/.dotfiles' },
       { desc = 'Quit', icon = '        ', action = 'qa!' },
     }
