@@ -16,13 +16,13 @@ require('packer').use({
       { desc = 'Live Grep', icon = '   ', action = 'Telescope live_grep' },
       { desc = 'Old Files', icon = '   ', action = 'Telescope oldfiles' },
       { desc = 'Dotfiles', icon = '    ', action = 'e ~/.dotfiles' },
-      { desc = 'Quit', icon = '        ', action = 'qa!' },
+      { desc = 'Quit', icon = '        ', action = 'qa!' },
     }
     db.custom_footer = { #vim.tbl_keys(packer_plugins) .. ' plugins loaded.' }
 
     local colors = require('autumn-nvim.colors').setup()
     vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = colors.rose.hex })
-    vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = colors.sage.hex })
+    vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = colors.gold_crayola.hex })
     vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = colors.cream_coffee.hex })
 
     db.header_pad = 20
