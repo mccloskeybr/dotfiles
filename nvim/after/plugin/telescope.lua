@@ -6,7 +6,7 @@ require('packer').use({
   requires = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
-    { 'debugloop/telescope-undo.nvim' },
+    'debugloop/telescope-undo.nvim',
   },
   config = function()
     require('telescope').setup({

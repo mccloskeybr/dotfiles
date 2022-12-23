@@ -23,6 +23,7 @@
     ~/.hgrc: hg/hgrc
     ~/.hg: hg
     ~/bin: bin
+    ~/wallpaper: wallpaper
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
