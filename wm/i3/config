@@ -6,6 +6,7 @@ set $mod Mod1
 
 font pango:monospace 8
 
+exec --no-startup-id xset s 600
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 251d1d -f
 exec --no-startup-id nm-applet
 exec dex -ae i3
@@ -109,60 +110,34 @@ client.urgent           $highlight  $highlight  $text_hi  $indicator
 
 # i3bar settings
 bar {
-        status_command i3status
-        separator_symbol ":"
-        colors {
-            background $background
-            statusline $text_hi
-            separator $text_lo
+  status_command i3status
+  separator_symbol ":"
+  colors {
+    background $background
+    statusline $text_hi
+    separator $text_lo
 
 #                               background  foreground  text
-            focused_workspace   $foreground $foreground $text_hi
-            active_workspace    $background $background $text_lo
-            inactive_workspace  $background $background $text_lo
-            urgent_workspace    $highlight  $highlight  $text_hi
-        }
+    focused_workspace   $foreground $foreground $text_hi
+    active_workspace    $background $background $text_lo
+    inactive_workspace  $background $background $text_lo
+    urgent_workspace    $highlight  $highlight  $text_hi
+  }
 }
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
-
-# save monitor names
-set $left-monitor "DP-0.8"
-set $right-monitor "DP-2.8"
-
-# set workspaces to specific monitors
-workspace $ws1 output $right-monitor
-workspace $ws2 output $right-monitor
-workspace $ws3 output $left-monitor
-workspace $ws4 output $left-monitor
-
-# open placeholders for apps on startup
-exec --no-startup-id i3-msg "workspace 1; append_layout ~/.config/i3/workspace_1.json"
-exec --no-startup-id i3-msg "workspace 2; append_layout ~/.config/i3/workspace_2.json"
-exec --no-startup-id i3-msg "workspace 3; append_layout ~/.config/i3/workspace_3.json"
-exec --no-startup-id i3-msg "workspace 4; append_layout ~/.config/i3/workspace_4.json"
-
-# open apps themselves
-exec --no-startup-id alacritty
-exec --no-startup-id google-chrome
-exec --no-startup-id google-chrome
-# gchat
-exec --no-startup-id google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi
-
-# open to default workspaces
-exec --no-startup-id i3-msg "workspace 1; workspace 3;"
