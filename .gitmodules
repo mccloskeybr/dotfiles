@@ -23,3 +23,6 @@
 [submodule "bin/pokemon-colorscripts"]
 	path = bin/pokemon-colorscripts
 	url = https://gitlab.com/phoneybadger/pokemon-colorscripts.git
+[submodule "spicetify/spicetify-cli"]
+	path = spicetify/spicetify-cli
+	url = https://github.com/spicetify/spicetify-cli

@@ -21,6 +21,7 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
     ~/.hgrc: hg/hgrc
+    ~/.spicetify/Themes: spicetify/Themes
     ~/.hg: hg
     ~/bin: bin
     ~/wallpaper: wallpaper
