@@ -15,9 +15,13 @@ Includes configurations for:
 *   [i3](https://github.com/i3/i3)
 *   [yabai](https://github.com/koekeishiya/yabai)
 
-![example](/screenshot.png)
+## Screenshots
 
-# Install
+![example 1](/example_1.png)
+
+![example 2](/example_2.png)
+
+## Install
 
 My dotfiles use [dotbot](https://github.com/anishathalye/dotbot), steps to install:
 
