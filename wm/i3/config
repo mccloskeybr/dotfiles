@@ -6,7 +6,7 @@ set $mod Mod1
 
 font pango:monospace 8
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 251d1d -f
 exec --no-startup-id nm-applet
 exec dex -ae i3
 

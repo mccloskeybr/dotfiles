@@ -8,3 +8,4 @@ if [ -f ~/.zsh/local.zsh ]; then
 fi
 
 source ~/bin/startup.sh
+source ~/.fehbg
