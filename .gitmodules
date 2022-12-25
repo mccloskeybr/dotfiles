@@ -26,3 +26,6 @@
 [submodule "spicetify/spicetify-cli"]
 	path = spicetify/spicetify-cli
 	url = https://github.com/spicetify/spicetify-cli
+[submodule "bin/cutefetch"]
+	path = bin/cutefetch
+	url = https://github.com/cybardev/cutefetch

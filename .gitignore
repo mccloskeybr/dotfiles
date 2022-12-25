@@ -18,3 +18,4 @@ bin/*/
 !bin/dotfiles_update.sh
 !bin/startup.sh
 !bin/pokemon-colorscripts*
+!bin/cutefetch*

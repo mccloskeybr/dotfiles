@@ -1,0 +1,1 @@
+/home/mccloskeybr/bin/cutefetch/cutefetch
