@@ -1,30 +1,31 @@
 - defaults:
-    link:
-      create: true
-      relink: true
+  link:
+    create: true
+    relink: true
 
 - clean:
-    ~/:
-      force: true
-    ~/.config:
-      recursive: true
+  ~/:
+    force: true
+  ~/.config:
+    recursive: true
 
 - link:
-    ~/.config/nvim: nvim
-    ~/.config/alacritty: alacritty
-    ~/.config/i3: wm/i3
-    ~/.config/i3status: wm/i3status
-    ~/.config/yabai/yabairc: wm/yabai/yabairc
-    ~/.config/skhd/skhdrc: wm/yabai/skhdrc
-    ~/.zshrc: zsh/zshrc
-    ~/.zsh: zsh
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux: tmux
-    ~/.hgrc: hg/hgrc
-    ~/.spicetify/Themes: spicetify/Themes
-    ~/.hg: hg
-    ~/bin: bin
-    ~/wallpaper: wallpaper
+  ~/.config/nvim: nvim
+  ~/.config/alacritty: alacritty
+  ~/.config/i3: wm/i3
+  ~/.config/i3status: wm/i3status
+  ~/.config/dunst: wm/dunst
+  ~/.config/yabai/yabairc: wm/yabai/yabairc
+  ~/.config/skhd/skhdrc: wm/yabai/skhdrc
+  ~/.zshrc: zsh/zshrc
+  ~/.zsh: zsh
+  ~/.tmux.conf: tmux/tmux.conf
+  ~/.tmux: tmux
+  ~/.hgrc: hg/hgrc
+  ~/.spicetify/Themes: spicetify/Themes
+  ~/.hg: hg
+  ~/bin: bin
+  ~/wallpaper: wallpaper
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
