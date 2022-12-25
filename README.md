@@ -21,6 +21,8 @@ Includes configurations for:
 
 ![example 2](/example_2.png)
 
+![example 3](/example_3.png)
+
 ## Install
 
 My dotfiles use [dotbot](https://github.com/anishathalye/dotbot), steps to install:
