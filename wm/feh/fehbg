@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/mccloskeybr/.dotfiles/wallpaper/autumn_bonsai.png' 
+feh --no-fehbg --bg-scale ~/.dotfiles/wallpaper/autumn_bonsai.png
