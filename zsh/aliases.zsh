@@ -8,5 +8,6 @@ alias grep='grep --color=auto'
 alias h='hg'
 alias v='nvim'
 alias vm='vim --clean'
+alias cdot='cd ~/.dotfiles'
 
 alias gchat='exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi'

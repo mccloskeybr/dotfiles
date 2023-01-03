@@ -1,39 +1,44 @@
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-# default config located here: https://github.com/sainathadapa/i3-wm-config/blob/master/i3-default-config-backup
+# https://i3wm.org/docs/userguide.html
+# default config: https://github.com/sainathadapa/i3-wm-config/blob/master/i3-default-config-backup
+
+exec dex -ae i3
 
 set $mod Mod1
 
 font pango:monospace 8
+default_border pixel 2
+default_floating_border pixel 2
 
-exec dex -ae i3
+# shortcuts
+bindsym $mod+d exec --no-startup-id dmenu_run -nb '#251D1D' -nf '#E4E4C4' -sb '#251D1D' -sf '#EEC686'
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+b exec blueman-manager
+bindsym $mod+c exec google-chrome
+bindsym $mod+a exec pavucontrol
 
+# bg apps
 exec --no-startup-id xset s 600
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 251d1d -f
 exec --no-startup-id nm-applet
 exec --no-startup-id sh ~/.fehbg
 
+# sound
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec --no-startup-id dmenu_run -nb '#251D1D' -nf '#E4E4C4' -sb '#251D1D' -sf '#EEC686'
+# load
 bindsym $mod+Shift+q kill
-bindsym $mod+f fullscreen toggle
-bindsym $mod+a focus parent
-#bindsym $mod+d focus child
-
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-floating_modifier Mod1
-bindsym $mod+r mode "resize"
-
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3lock -c 251d1d -f"
+
+# float
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+floating_modifier $mod
 
 # change focus
 bindsym $mod+h focus left
@@ -55,10 +60,11 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# change container layout (stacked, tabbed, toggle split)
+# container layout
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen toggle
 
 # define workspaces
 set $ws1 "1"
@@ -96,13 +102,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# colors
-set $background     #251d1d
-set $foreground     #564343
-set $highlight      #be8a60
-set $text_hi        #eec686
-set $text_lo        #564343
-set $indicator      #be8a60
+# colors (based off autumn theme)
+set $background #251d1d
+set $foreground #564343
+set $highlight #be8a60
+set $text_hi #eec686
+set $text_lo #564343
+set $indicator #be8a60
 
 #                       border      background  text      indicator
 client.focused          $foreground $foreground $text_hi  $indicator
@@ -110,24 +116,8 @@ client.unfocused        $background $background $text_lo  $indicator
 client.focused_inactive $background $background $text_lo  $indicator
 client.urgent           $highlight  $highlight  $text_hi  $indicator
 
-# i3bar settings
-bar {
-  status_command i3status
-  separator_symbol ":"
-  colors {
-    background $background
-    statusline $text_hi
-    separator $text_lo
-
-#                               background  foreground  text
-    focused_workspace   $foreground $foreground $text_hi
-    active_workspace    $background $background $text_lo
-    inactive_workspace  $background $background $text_lo
-    urgent_workspace    $highlight  $highlight  $text_hi
-  }
-}
-
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
   bindsym j resize grow height 10 px or 10 ppt
@@ -138,8 +128,25 @@ mode "resize" {
   bindsym Up resize shrink height 10 px or 10 ppt
   bindsym Right resize grow width 10 px or 10 ppt
 
-  # back to normal: Enter or Escape or $mod+r
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+r mode "default"
 }
+
+# i3bar settings
+bar {
+  status_command i3status
+  separator_symbol ":"
+  colors {
+    background $background
+    statusline $text_hi
+    separator $text_lo
+
+#                       background  foreground  text
+    focused_workspace   $foreground $foreground $text_hi
+    active_workspace    $background $background $text_lo
+    inactive_workspace  $background $background $text_lo
+    urgent_workspace    $highlight  $highlight  $text_hi
+  }
+}
+
