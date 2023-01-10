@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh/
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 export GTEST_COLOR=yes
 export CLICOLOR=1
