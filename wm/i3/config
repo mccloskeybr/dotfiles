@@ -20,6 +20,7 @@ bindsym $mod+c exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi
 # bg apps
 exec --no-startup-id xset s 600
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 251d1d -f
+exec --no-startup-id i3-battery-popup -n
 exec --no-startup-id nm-applet
 exec --no-startup-id sh ~/.fehbg
 

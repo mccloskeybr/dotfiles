@@ -19,3 +19,4 @@ bin/*/
 !bin/startup.sh
 !bin/pokemon-colorscripts*
 !bin/cutefetch*
+!bin/i3-battery-popup
