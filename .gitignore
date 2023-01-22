@@ -2,9 +2,9 @@
 *local*
 !nvim/after/plugin/local.lua
 
-nvim/plugin
 nvim/undo
 nvim/backup
+nvim/lazy-lock.json
 
 hg/blackbox.log*
 hg/dirstate

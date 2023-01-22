@@ -24,4 +24,4 @@ nnoremap('<Leader>t', '<cmd>tabnew<CR>')
 nnoremap('<Leader>v', '<cmd>vsplit<CR>')
 nnoremap('<Leader>h', '<cmd>split<CR>')
 
-do_if_exists(vim.fn.stdpath('config') .. '/lua/default/local/keybinds.lua')
+do_if_exists(vim.fn.stdpath('config') .. '/lua/default/local-keybinds.lua')
