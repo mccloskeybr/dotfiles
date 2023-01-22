@@ -55,7 +55,7 @@ return {
     { '<Leader>tb', function() require("telescope.builtin").buffers() end },
     { '<Leader>tu', function() require("telescope").extensions.undo.undo() end }
   },
-  config = function()
+  config = function(_, opts)
     require('telescope').setup({
       defaults = {
         dynamic_preview_title = true,

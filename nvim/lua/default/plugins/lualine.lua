@@ -2,7 +2,8 @@ return {
   'nvim-lualine/lualine.nvim',
   commit = '5f68f070e4f7158517afc55f125a6f5ed1f7db47',
   dependencies = { dir = '~/autumn-nvim' },
-  config = function()
+  event = 'VeryLazy',
+  config = function(_, opts)
     local colors = require('autumn-nvim.colors').setup()
     local autumn_theme = {
       normal = {

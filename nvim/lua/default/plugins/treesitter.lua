@@ -3,6 +3,7 @@ return {
   -- breaking change (removal of TS* highlight groups)
   commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
   build = ':TSUpdate',
+  event = 'BufReadPost',
   opts = {
     ensure_installed = {
       'bash',

@@ -1,7 +1,7 @@
 return {
   'unblevable/quick-scope',
   dependencies = { dir = '~/autumn-nvim' },
-  lazy = false,
+  event = 'VeryLazy',
   init = function()
     vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
   end,
