@@ -1,6 +1,9 @@
 return {
   'glepnir/dashboard-nvim',
-  dependencies = { dir = '~/autumn-nvim' },
+  dependencies = {
+    { dir = '~/autumn-nvim' },
+    'nvim-telescope/telescope.nvim'
+  },
   config = function()
     local db = require('dashboard')
     db.custom_header =  {
@@ -12,11 +15,12 @@ return {
       '  \\/____/   \\/_____/   \\/_/     \\/_/\\/_/   \\/_____/   \\/_____/     \\/_/ '
     }
     db.custom_center = {
-      { desc = 'Find File', icon = '   ', action = 'Telescope find_files' },
-      { desc = 'Live Grep', icon = '   ', action = 'Telescope live_grep' },
-      { desc = 'Old Files', icon = '   ', action = 'Telescope oldfiles' },
-      { desc = 'Dotfiles', icon = '    ', action = 'e ~/.dotfiles' },
-      { desc = 'Quit', icon = '        ', action = 'qa!' },
+      { desc = 'Plugins', icon = '      ', action = 'Lazy' },
+      { desc = 'Find File', icon = '    ', action = 'Telescope find_files' },
+      { desc = 'Live Grep', icon = '    ', action = 'Telescope live_grep' },
+      { desc = 'Old Files', icon = '    ', action = 'Telescope oldfiles' },
+      { desc = 'Dotfiles', icon = '     ', action = 'e ~/.dotfiles' },
+      { desc = 'Quit', icon = '         ', action = 'qa!' },
     }
     db.custom_footer = { require('lazy').stats().count .. ' plugins loaded in ' .. require('lazy').stats().startuptime .. 'ms.' }
 
