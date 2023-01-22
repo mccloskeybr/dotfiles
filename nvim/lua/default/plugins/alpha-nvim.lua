@@ -52,9 +52,9 @@ return {
     })
 
     local colors = require('autumn-nvim.colors').setup()
-    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = colors.rose.hex })
-    vim.api.nvim_set_hl(0, 'AlphaButtons', { fg = colors.gold_crayola.hex })
-    vim.api.nvim_set_hl(0, 'AlphaShortcut', { fg = colors.mint.hex })
-    vim.api.nvim_set_hl(0, 'AlphaFooter', { fg = colors.cream_coffee.hex })
+    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = colors.rose})
+    vim.api.nvim_set_hl(0, 'AlphaButtons', { fg = colors.gold_crayola })
+    vim.api.nvim_set_hl(0, 'AlphaShortcut', { fg = colors.mint })
+    vim.api.nvim_set_hl(0, 'AlphaFooter', { fg = colors.cream_coffee })
   end
 }

@@ -7,17 +7,17 @@ return {
     local colors = require('autumn-nvim.colors').setup()
     local autumn_theme = {
       normal = {
-        a = { fg = colors.black_coffee.hex, bg = colors.mint.hex },
-        b = { fg = colors.gold_crayola.hex, bg = colors.cream_coffee.hex },
-        c = { fg = colors.gold_crayola.hex, bg = colors.black_coffee.hex },
+        a = { fg = colors.black_coffee, bg = colors.mint },
+        b = { fg = colors.gold_crayola, bg = colors.cream_coffee },
+        c = { fg = colors.gold_crayola, bg = colors.black_coffee },
       },
-      insert = { a = { fg = colors.black_coffee.hex, bg = colors.teal.hex } },
-      visual = { a = { fg = colors.black_coffee.hex, bg = colors.rose.hex } },
-      replace = { a = { fg = colors.black_coffee.hex, bg = colors.gold_crayola.hex } },
+      insert = { a = { fg = colors.black_coffee, bg = colors.teal } },
+      visual = { a = { fg = colors.black_coffee, bg = colors.rose } },
+      replace = { a = { fg = colors.black_coffee, bg = colors.gold_crayola } },
       inactive = {
-        a = { fg = colors.beige.hex, bg = colors.cream_coffee.hex },
-        b = { fg = colors.gold_crayola.hex, bg = colors.black_coffee.hex },
-        c = { fg = colors.cream_coffee.hex, bg = colors.black_coffee.hex },
+        a = { fg = colors.beige, bg = colors.cream_coffee },
+        b = { fg = colors.gold_crayola, bg = colors.black_coffee },
+        c = { fg = colors.cream_coffee, bg = colors.black_coffee },
       },
     }
 
