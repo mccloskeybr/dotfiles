@@ -1,19 +1,18 @@
-require('default.funcs.map_funcs')
-
 return {
   {
     'L3MON4D3/LuaSnip',
     dependencies = {
       'rafamadriz/friendly-snippets',
     },
+    lazy = true,
+    keys = {
+      { '<C-Tab>', '<cmd>lua require("luasnip").jump(1)<CR>' },
+      { '<C-S-Tab>', '<cmd>lua require("luasnip").jump(-1)<CR>' },
+      { '<C-e>', '<cmd>lua require("luasnip").change_choice(1)<CR>' },
+      { '<C-E>', '<cmd>lua require("luasnip").change_choice(-1)<CR>' },
+    },
     config = function()
       require('luasnip.loaders.from_vscode').lazy_load()
-
-      inoremap_silent('<C-Tab>', '<cmd>lua require("luasnip").jump(1)<CR>')
-      inoremap_silent('<C-S-Tab>', '<cmd>lua require("luasnip").jump(-1)<CR>')
-
-      inoremap_silent('<C-e>', '<cmd>lua require("luasnip").change_choice(1)<CR>')
-      inoremap_silent('<C-E>', '<cmd>lua require("luasnip").change_choice(-1)<CR>')
     end
   }
 }

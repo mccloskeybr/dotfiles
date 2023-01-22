@@ -2,7 +2,6 @@ return {
   {
     'glepnir/dashboard-nvim',
     dependencies = { dir = '~/autumn-nvim' },
-    lazy = false,
     config = function()
       local db = require('dashboard')
       db.custom_header =  {
@@ -20,16 +19,16 @@ return {
         { desc = 'Dotfiles', icon = '    ', action = 'e ~/.dotfiles' },
         { desc = 'Quit', icon = '        ', action = 'qa!' },
       }
-      db.custom_footer = { require("lazy").stats().count .. ' plugins loaded.' }
+      db.custom_footer = { require('lazy').stats().count .. ' plugins loaded in ' .. require('lazy').stats().startuptime .. 'ms.' }
+
+      db.header_pad = 20
+      db.center_pad = 3
+      db.footer_pad = 3
 
       local colors = require('autumn-nvim.colors').setup()
       vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = colors.rose.hex })
       vim.api.nvim_set_hl(0, 'DashboardCenter', { fg = colors.gold_crayola.hex })
       vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = colors.cream_coffee.hex })
-
-      db.header_pad = 20
-      db.center_pad = 3
-      db.footer_pad = 3
     end
   }
 }

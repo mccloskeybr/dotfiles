@@ -1,5 +1,3 @@
-require('default.funcs.map_funcs')
-
 return {
   {
     'anuvyklack/windows.nvim',
@@ -7,13 +5,14 @@ return {
       'anuvyklack/middleclass',
       'anuvyklack/animation.nvim',
     },
+    keys = {
+      { '<C-w>z', '<cmd>WindowsMaximize<CR>' },
+    },
     config = function()
       vim.o.winwidth = 10
       vim.o.winminwidth = 10
       vim.o.equalalways = false
       require('windows').setup()
-
-      nnoremap('<C-w>z', '<cmd>WindowsMaximize<CR>')
     end
   }
 }

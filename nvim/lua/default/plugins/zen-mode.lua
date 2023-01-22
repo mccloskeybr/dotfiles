@@ -1,11 +1,11 @@
-require('default.funcs.map_funcs')
-
 return {
   {
     "folke/zen-mode.nvim",
+    keys = {
+      { '<C-w>Z', function() require("zen-mode").toggle() end },
+    },
     config = function()
       require("zen-mode").setup()
-      nnoremap('<C-w>Z', '<cmd>lua require("zen-mode").toggle()<CR>')
     end
   }
 }

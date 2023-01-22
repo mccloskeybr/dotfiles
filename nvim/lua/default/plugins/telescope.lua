@@ -1,6 +1,4 @@
-require('default.funcs.map_funcs')
 require('default.funcs.helpers')
-
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -8,6 +6,56 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-ui-select.nvim',
       'debugloop/telescope-undo.nvim',
+    },
+    opts = {
+    },
+    keys = {
+      {
+        '<Leader>tf',
+        function()
+          require('telescope.builtin').find_files({
+            cwd = get_project_root(),
+            previewer = false
+          })
+        end,
+        mode = {'n'}
+      },
+      {
+        '<Leader>tf',
+        function()
+          require('telescope.builtin').find_files({
+            cwd = get_project_root(),
+            previewer = false,
+            default_text = get_visual_selection()
+          })
+        end,
+        mode = {'v'}
+      },
+      {
+        '<Leader>tl',
+        function()
+          require('telescope.builtin').live_grep({
+            cwd = get_project_root(),
+            path_display = { 'shorten' }
+          })
+        end,
+        mode = {'n'}
+      },
+      {
+        '<Leader>tl',
+        function()
+          require('telescope.builtin').live_grep({
+            cwd = get_project_root(),
+            path_display = { 'shorten' },
+            default_text = get_visual_selection()
+          })
+        end,
+        mode = {'v'}
+      },
+      { '<Leader>tr', function() require("telescope.builtin").lsp_references() end },
+      { '<Leader>td', function() require("telescope.builtin").lsp_definitions() end },
+      { '<Leader>tb', function() require("telescope.builtin").buffers() end },
+      { '<Leader>tu', function() require("telescope").extensions.undo.undo() end }
     },
     config = function()
       require('telescope').setup({
@@ -23,31 +71,6 @@ return {
       })
       require('telescope').load_extension('ui-select')
       require('telescope').load_extension('undo')
-
-      nnoremap('<Leader>tf', '<cmd>lua require("telescope.builtin").find_files({' ..
-        'cwd = get_project_root(),' ..
-        'previewer = false' ..
-        '})<CR>')
-      vnoremap('<Leader>tf', '<cmd>lua require("telescope.builtin").find_files({' ..
-        'cwd = get_project_root(),' ..
-        'previewer = false,' ..
-        'default_text = get_visual_selection()' ..
-        '})<CR>')
-
-      nnoremap('<Leader>tl', '<cmd>lua require("telescope.builtin").live_grep({' ..
-        'cwd = get_project_root(),' ..
-        'path_display = {"shorten"}' ..
-        '})<CR>')
-      vnoremap('<Leader>tl', '<cmd>lua require("telescope.builtin").live_grep({' ..
-        'cwd = get_project_root(),' ..
-        'path_display = {"shorten"},' ..
-        'default_text = get_visual_selection()' ..
-        '})<CR>')
-
-      nnoremap('<Leader>tr', '<cmd>lua require("telescope.builtin").lsp_references()<CR>')
-      nnoremap('<Leader>td', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>')
-      nnoremap('<Leader>tb', '<cmd>lua require("telescope.builtin").buffers()<CR>')
-      nnoremap('<Leader>tu', '<cmd>lua require("telescope").extensions.undo.undo()<CR>')
     end
   }
 }

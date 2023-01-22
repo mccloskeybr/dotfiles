@@ -1,5 +1,3 @@
-require('default.funcs.map_funcs')
-
 return {
   {
     'karb94/neoscroll.nvim',
