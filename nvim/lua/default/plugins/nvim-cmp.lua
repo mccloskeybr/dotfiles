@@ -5,33 +5,34 @@ return {
     'hrsh7th/cmp-buffer',
     'saadparwaiz1/cmp_luasnip',
   },
+  lazy = false,
   config = function()
     local kind_icons = {
-      Text = "",
-      Method = "",
-      Function = "",
-      Constructor = "",
-      Field = "",
-      Variable = "",
-      Class = "ﴯ",
-      Interface = "",
-      Module = "",
-      Property = "ﰠ",
-      Unit = "",
-      Value = "",
-      Enum = "",
-      Keyword = "",
-      Snippet = "",
-      Color = "",
-      File = "",
-      Reference = "",
-      Folder = "",
-      EnumMember = "",
-      Constant = "",
-      Struct = "",
-      Event = "",
-      Operator = "",
-      TypeParameter = ""
+      Text = '',
+      Method = '',
+      Function = '',
+      Constructor = '',
+      Field = '',
+      Variable = '',
+      Class = 'ﴯ',
+      Interface = '',
+      Module = '',
+      Property = 'ﰠ',
+      Unit = '',
+      Value = '',
+      Enum = '',
+      Keyword = '',
+      Snippet = '',
+      Color = '',
+      File = '',
+      Reference = '',
+      Folder = '',
+      EnumMember = '',
+      Constant = '',
+      Struct = '',
+      Event = '',
+      Operator = '',
+      TypeParameter = ''
     }
     require('cmp').setup({
       snippet = {
@@ -45,7 +46,7 @@ return {
       },
       mapping = require('cmp').mapping.preset.insert({
         ['<C-y>'] = require('cmp').mapping.confirm({ select = true }),
-        ["<C-Space>"] = require('cmp').mapping.complete(),
+        ['<C-Space>'] = require('cmp').mapping.complete(),
       }),
       sources = require('cmp').config.sources({
         { name = 'luasnip' },
@@ -56,9 +57,9 @@ return {
         format = function(entry, vim_item)
           vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
           vim_item.menu = ({
-            luasnip = "[LuaSnip]",
-            nvim_lsp = "[LSP]",
-            buffer = "[Buffer]",
+            luasnip = '[LuaSnip]',
+            nvim_lsp = '[LSP]',
+            buffer = '[Buffer]',
           })[entry.source.name]
           return vim_item
         end

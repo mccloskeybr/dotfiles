@@ -6,6 +6,7 @@ return {
     'nvim-telescope/telescope-ui-select.nvim',
     'debugloop/telescope-undo.nvim',
   },
+  cmd = 'Telescope',
   keys = {
     {
       '<Leader>tf',

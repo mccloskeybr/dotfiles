@@ -1,9 +1,7 @@
 return {
   'glepnir/dashboard-nvim',
-  dependencies = {
-    { dir = '~/autumn-nvim' },
-    'nvim-telescope/telescope.nvim'
-  },
+  dependencies = { dir = '~/autumn-nvim' },
+  event = 'VimEnter',
   config = function()
     local db = require('dashboard')
     db.custom_header =  {
@@ -22,7 +20,8 @@ return {
       { desc = 'Dotfiles', icon = '     ', action = 'e ~/.dotfiles' },
       { desc = 'Quit', icon = '         ', action = 'qa!' },
     }
-    db.custom_footer = { require('lazy').stats().count .. ' plugins loaded in ' .. require('lazy').stats().startuptime .. 'ms.' }
+    local stats = require('lazy').stats()
+    db.custom_footer = { stats.loaded .. ' plugins loaded (of ' .. stats.count .. ').' }
 
     db.header_pad = 20
     db.center_pad = 3
