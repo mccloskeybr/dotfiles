@@ -5,7 +5,7 @@ return {
     'hrsh7th/cmp-buffer',
     'saadparwaiz1/cmp_luasnip',
   },
-  lazy = false,
+  event = 'InsertEnter',
   config = function()
     local kind_icons = {
       Text = '',
