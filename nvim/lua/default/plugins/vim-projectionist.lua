@@ -8,16 +8,10 @@ return {
     { '<Leader>rb', '<cmd>Ebuild<CR>' },
   },
   init = function()
-      vim.g.projectionist_heuristics = {
+    -- global projectionist config is bad practice but i basically
+    -- only work with cpp anyway.
+    vim.g.projectionist_heuristics = {
       ['*'] = {
-        ['*.cc'] = {
-          alternate = {
-            '{dirname}/{basename}.h',
-            '{dirname}/{basename}_test.cc',
-            '{dirname}/BUILD',
-          },
-          type = 'impl'
-        },
         ['*.h'] = {
           alternate = {
             '{dirname}/{basename}.cc',
@@ -26,10 +20,18 @@ return {
           },
           type = 'header'
         },
+        ['*.cc'] = {
+          alternate = {
+            '{dirname}/{basename}.h',
+            '{dirname}/{basename}_test.cc',
+            '{dirname}/BUILD',
+          },
+          type = 'impl'
+        },
         ['*_test.cc'] = {
           alternate = {
             '{dirname}/{basename}.h',
-            '{dirname}/{basename}.h',
+            '{dirname}/{basename}.cc',
             '{dirname}/BUILD',
           },
           type = 'test'
