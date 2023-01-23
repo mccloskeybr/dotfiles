@@ -1,6 +1,5 @@
 return {
   'goolord/alpha-nvim',
-  dependencies = { dir = '~/autumn-nvim' },
   event = 'VimEnter',
   opts = function()
     local db = require('alpha.themes.dashboard')
@@ -21,13 +20,6 @@ return {
       db.button('q', '  Quit', '<cmd>qa!<CR>'),
     }
 
-    for _, button in ipairs(db.section.buttons.val) do
-      button.opts.hl = 'AlphaButtons'
-      button.opts.hl_shortcut = 'AlphaShortcut'
-    end
-    db.section.header.opts.hl = 'AlphaHeader'
-    db.section.footer.opts.hl = 'AlphaFooter'
-
     db.opts.layout = {
       { type = 'padding', val = 20 },
       db.section.header,
@@ -36,6 +28,15 @@ return {
       { type = 'padding', val = 3 },
       db.section.footer,
     }
+
+    -- manually define hl groups for colorscheme to set
+    for _, button in ipairs(db.section.buttons.val) do
+      button.opts.hl = 'AlphaButtons'
+      button.opts.hl_shortcut = 'AlphaShortcut'
+    end
+    db.section.header.opts.hl = 'AlphaHeader'
+    db.section.footer.opts.hl = 'AlphaFooter'
+
     return db
   end,
   config = function(_, db)
@@ -50,11 +51,5 @@ return {
         pcall(vim.cmd.AlphaRedraw)
       end,
     })
-
-    local colors = require('autumn-nvim.colors').setup()
-    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = colors.rose})
-    vim.api.nvim_set_hl(0, 'AlphaButtons', { fg = colors.gold_crayola })
-    vim.api.nvim_set_hl(0, 'AlphaShortcut', { fg = colors.mint })
-    vim.api.nvim_set_hl(0, 'AlphaFooter', { fg = colors.cream_coffee })
   end
 }
