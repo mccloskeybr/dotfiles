@@ -17,6 +17,9 @@ require('lazy').setup({
     import = 'default.plugins',
     install = {
       colorscheme = { 'autumn-nvim' }
-    }
+    },
+    dev = {
+      path = '~',
+    },
   }
 })
