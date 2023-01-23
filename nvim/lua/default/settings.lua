@@ -51,5 +51,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     require('vim.highlight').on_yank({ timeout = 500 })
   end,
 })
-
-do_if_exists(vim.fn.stdpath('config') .. '/lua/default/local-settings.lua')

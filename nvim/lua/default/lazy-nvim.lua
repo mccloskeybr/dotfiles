@@ -10,16 +10,12 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:append(lazypath)
 
 require('lazy').setup({
   {
     import = 'default.plugins',
-    install = {
-      colorscheme = { 'autumn-nvim' }
-    },
-    dev = {
-      path = '~',
-    },
+    install = { colorscheme = { 'autumn-nvim' } },
+    dev = { path = '~' },
   }
 })
