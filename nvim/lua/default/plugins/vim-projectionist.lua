@@ -11,7 +11,7 @@ return {
     -- global projectionist config is bad practice but i basically
     -- only work with cpp anyway.
     vim.g.projectionist_heuristics = {
-      ['*'] = {
+      ['*.cc|*.h'] = {
         ['*.h'] = {
           alternate = {
             '{dirname}/{basename}.cc',
@@ -22,8 +22,8 @@ return {
         },
         ['*.cc'] = {
           alternate = {
-            '{dirname}/{basename}.h',
             '{dirname}/{basename}_test.cc',
+            '{dirname}/{basename}.h',
             '{dirname}/BUILD',
           },
           type = 'impl'
