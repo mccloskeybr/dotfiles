@@ -90,7 +90,7 @@ return {
             -- /path/to/file -> /path/to/.
             remove_filename = function(w)
               print('build!')
-              if (string.find(w, '/')) then
+              if (string.find(w, '/') ~= nil) then
                 return string.gsub(w, '(.*/+).*', '%1')
               end
               return ''
@@ -98,7 +98,7 @@ return {
             -- example_test -> example. example -> example.
             remove_test_suffix = function(w)
               print(w)
-              if (string.find(w, '_test.cc')) then
+              if (string.find(w, '_test') ~= nil) then
                 return string.gsub(w, '(.*)_test', '%1')
               end
               return w
