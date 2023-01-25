@@ -70,19 +70,10 @@ return {
         ['telescope-alternate'] = {
           mappings = {
             {
-              -- todo, figure out how to separate .cc from _test.cc alts
               '(.*).cc',
               {
-                { '[1].h', 'Header' },
-                { '[1]_test.cc', 'Test' },
-                { '[1:remove_filename]BUILD', 'Build' },
-              }
-            },
-            {
-              '(.*_test).cc',
-              {
-                { '[1].cc', 'Impl' },
-                { '[1].h', 'Header' },
+                { '[1:remove_test_suffix].h', 'Header' },
+                { '[1:remove_test_suffix]_test.cc', 'Test' },
                 { '[1:remove_filename]BUILD', 'Build' },
               }
             },
@@ -96,12 +87,21 @@ return {
             }
           },
           transformers = {
-            -- /path/to/file -> /path/to/
+            -- /path/to/file -> /path/to/.
             remove_filename = function(w)
+              print('build!')
               if (string.find(w, '/')) then
                 return string.gsub(w, '(.*/+).*', '%1')
               end
               return ''
+            end,
+            -- example_test -> example. example -> example.
+            remove_test_suffix = function(w)
+              print(w)
+              if (string.find(w, '_test.cc')) then
+                return string.gsub(w, '(.*)_test', '%1')
+              end
+              return w
             end
           }
         },
