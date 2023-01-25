@@ -4,6 +4,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
+    'otavioschwanck/telescope-alternate.nvim',
     'debugloop/telescope-undo.nvim',
   },
   cmd = 'Telescope',
@@ -54,6 +55,7 @@ return {
     { '<Leader>td', function() require('telescope.builtin').lsp_definitions() end },
     { '<Leader>tb', function() require('telescope.builtin').buffers() end },
     { '<Leader>tu', function() require('telescope').extensions.undo.undo() end },
+    { '<Leader>ta', function() require('telescope-alternate.telescope').alternate() end },
   },
   config = function(_, opts)
     require('telescope').setup({
@@ -65,9 +67,49 @@ return {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown({})
         },
+        ['telescope-alternate'] = {
+          mappings = {
+            {
+              -- todo, figure out how to separate .cc from _test.cc alts
+              '(.*).cc',
+              {
+                { '[1].h', 'Header' },
+                { '[1]_test.cc', 'Test' },
+                { '[1:remove_filename]BUILD', 'Build' },
+              }
+            },
+            {
+              '(.*_test).cc',
+              {
+                { '[1].cc', 'Impl' },
+                { '[1].h', 'Header' },
+                { '[1:remove_filename]BUILD', 'Build' },
+              }
+            },
+            {
+              '(.*).h',
+              {
+                { '[1].cc', 'Impl' },
+                { '[1]_test.cc', 'Test' },
+                { '[1:remove_filename]BUILD', 'Build' },
+              }
+            }
+          },
+          transformers = {
+            -- /path/to/file -> /path/to/
+            remove_filename = function(w)
+              if (string.find(w, '/')) then
+                return string.gsub(w, '(.*/+).*', '%1')
+              end
+              return ''
+            end
+          }
+        },
       }
     })
+
     require('telescope').load_extension('ui-select')
     require('telescope').load_extension('undo')
+    require('telescope').load_extension('telescope-alternate')
   end
 }
