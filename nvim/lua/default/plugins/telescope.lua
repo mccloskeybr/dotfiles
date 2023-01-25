@@ -13,6 +13,7 @@ return {
       '<Leader>tf',
       function()
         require('telescope.builtin').find_files({
+          layout_strategy = 'vertical',
           cwd = get_project_root(),
           previewer = false
         })
@@ -23,6 +24,7 @@ return {
       '<Leader>tf',
       function()
         require('telescope.builtin').find_files({
+          layout_strategy = 'vertical',
           cwd = get_project_root(),
           previewer = false,
           default_text = get_visual_selection()
@@ -34,6 +36,7 @@ return {
       '<Leader>tl',
       function()
         require('telescope.builtin').live_grep({
+          layout_strategy = 'vertical',
           cwd = get_project_root(),
           path_display = { 'shorten' }
         })
@@ -44,6 +47,7 @@ return {
       '<Leader>tl',
       function()
         require('telescope.builtin').live_grep({
+          layout_strategy = 'vertical',
           cwd = get_project_root(),
           path_display = { 'shorten' },
           default_text = get_visual_selection()
@@ -61,7 +65,6 @@ return {
     require('telescope').setup({
       defaults = {
         dynamic_preview_title = true,
-        layout_strategy = 'vertical',
       },
       extensions = {
         ['ui-select'] = {
@@ -70,21 +73,14 @@ return {
         ['telescope-alternate'] = {
           mappings = {
             {
-              '(.*).cc',
-              {
-                { '[1:remove_test_suffix].h', 'Header' },
-                { '[1:remove_test_suffix]_test.cc', 'Test' },
-                { '[1:remove_filename]BUILD', 'Build' },
+              pattern = '(.*)[.][cc|h]',
+              targets = {
+                { template = '[1:remove_test_suffix].h', label = 'Header' },
+                { template = '[1:remove_test_suffix].cc', label = 'Impl' },
+                { template = '[1:remove_test_suffix]_test.cc', label = 'Test' },
+                { template = '[1:remove_filename]BUILD', label = 'Build' },
               }
             },
-            {
-              '(.*).h',
-              {
-                { '[1].cc', 'Impl' },
-                { '[1]_test.cc', 'Test' },
-                { '[1:remove_filename]BUILD', 'Build' },
-              }
-            }
           },
           transformers = {
             -- /path/to/file -> /path/to/.
