@@ -81,6 +81,12 @@ return {
                 { template = '[1:remove_filename]BUILD', label = 'Build' },
               }
             },
+            {
+              pattern = '(.*)[.][proto]',
+              targets = {
+                { template = '[1:remove_filename]BUILD', label = 'Build' },
+              }
+            },
           },
           transformers = {
             -- /path/to/file -> /path/to/.
