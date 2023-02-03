@@ -34,6 +34,14 @@ return {
       Operator = '',
       TypeParameter = ''
     }
+
+    -- if the lsp offers a completion score, use it when sorting completion options.
+    local function compare_by_completion_score(entry1, entry2)
+      if entry1.completion_item.score ~= nil and entry2.completion_item.score ~= nil then
+        return entry1.completion_item.score > entry2.completion_item.score
+      end
+    end
+
     require('cmp').setup({
       snippet = {
         expand = function(args)
@@ -63,6 +71,19 @@ return {
           })[entry.source.name]
           return vim_item
         end
+      },
+      sorting = {
+        comparators = {
+          compare_by_completion_score,
+          require('cmp').config.compare.offset,
+          require('cmp').config.compare.exact,
+          require('cmp').config.compare.score,
+          require('cmp').config.compare.recently_used,
+          require('cmp').config.compare.locality,
+          require('cmp').config.compare.kind,
+          require('cmp').config.compare.length,
+          require('cmp').config.compare.order,
+        },
       },
     })
   end
