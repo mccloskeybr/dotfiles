@@ -78,6 +78,7 @@ return {
                 { template = '[1:remove_test_suffix].h', label = 'Header' },
                 { template = '[1:remove_test_suffix].cc', label = 'Impl' },
                 { template = '[1:remove_test_suffix]_test.cc', label = 'Test' },
+                { template = '[1:add_mock_prefix].h', label = 'Mock' },
                 { template = '[1:remove_filename]BUILD', label = 'Build' },
               }
             },
@@ -91,20 +92,25 @@ return {
           transformers = {
             -- /path/to/file -> /path/to/.
             remove_filename = function(w)
-              print('build!')
-              if (string.find(w, '/') ~= nil) then
+              if string.find(w, '/') ~= nil then
                 return string.gsub(w, '(.*/+).*', '%1')
               end
               return ''
             end,
             -- example_test -> example. example -> example.
             remove_test_suffix = function(w)
-              print(w)
-              if (string.find(w, '_test') ~= nil) then
-                return string.gsub(w, '(.*)_test', '%1')
+              return string.gsub(w, '(.*)_test', '%1')
+            end,
+            -- /path/to/file -> /path/to/mock_file
+            add_mock_prefix = function(w)
+              -- also remove test suffix
+              w = string.gsub(w, '(.*)_test', '%1')
+              if string.find(w, '/') ~= nil then
+                return string.gsub(w, '(.*/+)(.*)', '%1mock_%2')
+              else
+                return 'mock_' .. w
               end
-              return w
-            end
+            end,
           }
         },
       }
