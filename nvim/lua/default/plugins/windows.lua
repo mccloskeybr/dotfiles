@@ -4,6 +4,7 @@ return {
     'anuvyklack/middleclass',
     'anuvyklack/animation.nvim',
   },
+  event = 'VeryLazy',
   keys = {
     { '<C-w>z', '<cmd>WindowsMaximize<CR>' },
   },
