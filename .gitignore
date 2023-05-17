@@ -20,3 +20,4 @@ bin/*/
 !bin/pokemon-colorscripts*
 !bin/cutefetch*
 !bin/i3-battery-popup
+!bin/legacy_to_standard_iid.sh
