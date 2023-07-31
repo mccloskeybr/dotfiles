@@ -22,6 +22,7 @@ vim.o.incsearch = true        -- search as chars are entered
 vim.o.ignorecase = true       -- ignore case
 vim.o.smartcase = true        -- remember prev searches
 
+vim.o.updatetime = 2000       -- inactive time (ms) to write
 vim.o.autoread = true         -- auto reload file on change
 vim.o.laststatus = 3          -- always display status line
 
