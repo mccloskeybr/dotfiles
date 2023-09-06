@@ -3,7 +3,7 @@ return {
   dependencies = {
     'nvim-telescope/telescope.nvim',
   },
-  event = 'VeryLazy',
+  event = 'BufEnter',
   keys = {
     {
       '<Leader>lc',

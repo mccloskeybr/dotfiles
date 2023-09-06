@@ -7,7 +7,7 @@ return {
     'otavioschwanck/telescope-alternate.nvim',
     'debugloop/telescope-undo.nvim',
   },
-  cmd = 'Telescope',
+  cmd = 'BufEnter',
   keys = {
     {
       '<Leader>tf',
