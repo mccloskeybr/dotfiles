@@ -83,6 +83,20 @@ return {
               }
             },
             {
+              pattern = '(.*)java/(.*).java',
+              targets = {
+                { template = '[1]javatests/[2]Test.java', label = 'Test' },
+                { template = '[1:remove_filename]BUILD', label = 'Build' },
+              }
+            },
+            {
+              pattern = '(.*)javatests/(.*)Test.java',
+              targets = {
+                { template = '[1]java/[2].java', label = 'Impl' },
+                { template = '[1:remove_filename]BUILD', label = 'Build' },
+              }
+            },
+            {
               pattern = '(.*)[.][proto]',
               targets = {
                 { template = '[1:remove_filename]BUILD', label = 'Build' },

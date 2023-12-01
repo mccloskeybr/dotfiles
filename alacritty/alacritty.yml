@@ -70,9 +70,9 @@ colors:
     focused_match:
       foreground: '#f98948' # mango
       background: '#251d1d'
-    bar:
-      background: '#eaead2'
-      foreground: '#251d1d'
+  footer_bar:
+    background: '#eaead2'
+    foreground: '#251d1d'
   selection:
     text: CellBackground
     background: CellForeground

@@ -1,5 +1,5 @@
 return {
-  'mccloskeybr/autumn-nvim',
+  dir = '~/autumn-nvim',
   dev = true,
   lazy = false,
   priority = 1000,

@@ -1,7 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   -- breaking change (removal of TS* highlight groups)
-  commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
+  -- commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
   dependencies = {
     'nvim-treesitter/playground'
   },
