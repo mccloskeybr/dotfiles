@@ -2,7 +2,6 @@ return {
   'L3MON4D3/LuaSnip',
   dependencies = {
     'rafamadriz/friendly-snippets',
-    { dir = '~/luasnip-google.nvim' },
   },
   keys = {
     { '<C-Tab>', '<cmd>lua require("luasnip").jump(1)<CR>' },
@@ -12,6 +11,5 @@ return {
   },
   config = function()
     require('luasnip.loaders.from_vscode').lazy_load()
-    require('luasnip-google').load_snippets()
   end
 }
