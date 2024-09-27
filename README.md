@@ -4,7 +4,7 @@ My dotfiles.
 
 Intended for linux use, but may be adapted to mac.
 
-Theme: [autumn](https://github.com/mccloskeybr/autumn-nvim).
+Theme: [moonfly](https://github.com/bluz71/vim-moonfly-colors).
 
 Includes configurations for:
 
