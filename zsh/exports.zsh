@@ -31,6 +31,7 @@ PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
+PATH=$PATH:/snap/bin
 PATH=$PATH:/root/.cargo/bin
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.cargo/bin
