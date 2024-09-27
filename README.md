@@ -13,15 +13,10 @@ Includes configurations for:
 *   [tmux](https://github.com/tmux/tmux)
 *   [alacritty](https://github.com/alacritty/alacritty)
 *   [i3](https://github.com/i3/i3)
-*   [yabai](https://github.com/koekeishiya/yabai)
 
 ## Screenshots
 
 ![example 1](/example_1.png)
-
-![example 2](/example_2.png)
-
-![example 3](/example_3.png)
 
 ## Install
 
