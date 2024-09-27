@@ -5,9 +5,7 @@ return {
   opts = {
     show_current_context = true,
     char_space_blankline = ' ',
-    char_highlight_list = {
-      'LineNr',
-    },
+    char_highlight_list = { 'LineNr' },
   },
   config = function(_, opts)
     vim.g.indentLine_fileTypeExclude = { 'dashboard' }

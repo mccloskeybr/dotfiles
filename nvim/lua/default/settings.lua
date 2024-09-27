@@ -2,7 +2,6 @@ require('default.funcs.io')
 
 vim.o.encoding = 'utf-8'
 vim.o.termguicolors = true
-vim.o.t_Co=256
 
 vim.o.expandtab = true        -- use spaces not tabs
 vim.o.tabstop = 2             -- tab = 2 spaces

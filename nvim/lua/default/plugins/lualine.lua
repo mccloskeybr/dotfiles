@@ -1,30 +1,11 @@
 return {
   'nvim-lualine/lualine.nvim',
   commit = '5f68f070e4f7158517afc55f125a6f5ed1f7db47',
-  dependencies = { dir = '~/autumn-nvim' },
   event = 'VeryLazy',
   config = function(_, opts)
-    local colors = require('autumn-nvim.colors').setup()
-    local autumn_theme = {
-      normal = {
-        a = { fg = colors.black_coffee, bg = colors.mint },
-        b = { fg = colors.gold_crayola, bg = colors.cream_coffee },
-        c = { fg = colors.gold_crayola, bg = colors.black_coffee },
-      },
-      insert = { a = { fg = colors.black_coffee, bg = colors.teal } },
-      visual = { a = { fg = colors.black_coffee, bg = colors.rose } },
-      replace = { a = { fg = colors.black_coffee, bg = colors.gold_crayola } },
-      inactive = {
-        a = { fg = colors.beige, bg = colors.cream_coffee },
-        b = { fg = colors.gold_crayola, bg = colors.black_coffee },
-        c = { fg = colors.cream_coffee, bg = colors.black_coffee },
-      },
-    }
-
     require('lualine').setup({
       options = {
         icons_enabled = true,
-        theme = autumn_theme,
         component_separators = '|',
         section_separators = { left = '', right = '' },
         disabled_filetypes = {

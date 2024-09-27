@@ -12,11 +12,8 @@ return {
       [[   \/____/   \/_____/   \/_/     \/_/\/_/   \/_____/   \/_____/     \/_/ ]]
     }
     db.section.buttons.val = {
-      db.button('p', '  Plugins', '<cmd>Lazy<CR>'),
-      db.button('f', '  Find File', '<cmd>Telescope find_files<CR>'),
-      db.button('l', '  Live Grep', '<cmd>Telescope live_grep<CR>'),
-      db.button('o', '  Old Files', '<cmd>Telescope oldfiles<CR>'),
-      db.button('d', '  Dotfiles', '<cmd>e ~/.dotfiles<CR>'),
+      db.button('l', '  Lazy', '<cmd>Lazy<CR>'),
+      db.button('d', '  Dotfiles', '<cmd>Oil ~/.dotfiles<CR>'),
       db.button('q', '  Quit', '<cmd>qa!<CR>'),
     }
 

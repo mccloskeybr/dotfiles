@@ -55,47 +55,35 @@ mouse:
   triple_click: { threshold: 300 }
   hide_when_typing: false
 
-theme: Autumn
+# moonfly
 colors:
   primary:
-    background: '#251d1d'
-    foreground: '#eaead2'
+    background: '#080808'
+    foreground: '#b2b2b2'
+
   cursor:
-    text: CellBackground
-    cursor: CellForeground
-  search:
-    matches:
-      foreground: '#eec686' # gold
-      background: '#251d1d'
-    focused_match:
-      foreground: '#f98948' # mango
-      background: '#251d1d'
-  footer_bar:
-    background: '#eaead2'
-    foreground: '#251d1d'
-  selection:
-    text: CellBackground
-    background: CellForeground
+    text: '#080808'
+    cursor: '#b2b2b2'
 
   normal:
-    black:   '#564343' # coffee
-    red:     '#d2606b' # crimson
-    green:   '#90ad92' # mint
-    yellow:  '#eec686' # gold
-    blue:    '#be8a60' # brass
-    magenta: '#f98948' # mango
-    cyan:    '#598291' # teal
-    white:   '#eaead2' # beige
+    black:   '#323437'
+    red:     '#ff5454'
+    green:   '#8cc85f'
+    yellow:  '#e3c78a'
+    blue:    '#80a0ff'
+    magenta: '#d183e8'
+    cyan:    '#79dac8'
+    white:   '#c6c6c6'
 
   bright:
-    black:   '#564343' # coffee
-    red:     '#d2606b' # crimson
-    green:   '#90ad92' # mint
-    yellow:  '#eec686' # gold
-    blue:    '#be8a60' # brass
-    magenta: '#f98948' # mango
-    cyan:    '#598291' # teal
-    white:   '#eaead2' # beige
+    black:   '#949494'
+    red:     '#ff5189'
+    green:   '#36c692'
+    yellow:  '#bfbf97'
+    blue:    '#74b2ff'
+    magenta: '#ae81ff'
+    cyan:    '#85dc85'
+    white:   '#e4e4e4'
 
 key_bindings:
   - { key: Paste, action: Paste }
