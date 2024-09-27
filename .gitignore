@@ -2,6 +2,8 @@
 *local*
 !nvim/after/plugin/local.lua
 
+tmux/plugins/*
+
 nvim/undo
 nvim/backup
 nvim/lazy-lock.json
