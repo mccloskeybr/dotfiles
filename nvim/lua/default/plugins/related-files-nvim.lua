@@ -8,8 +8,7 @@ local sep = function(file_path)
 end
 
 return {
-  -- 'mccloskeybr/related_files.nvim',
-  dir = 'Z:/related_files.nvim',
+  'mccloskeybr/related_files.nvim',
   keys = {
     {
       '<Leader>r',
