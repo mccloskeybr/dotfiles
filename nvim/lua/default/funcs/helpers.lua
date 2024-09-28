@@ -1,4 +1,4 @@
-local function sep()
+local sep = function()
   -- i hate windows!
   if vim.g.os == 'WINDOWS' then
     return '\\\\'
@@ -7,12 +7,12 @@ local function sep()
 end
 
 -- https://www.reddit.com/r/neovim/comments/oo97pq/how_to_get_the_visual_selection_range/
-function get_visual_selection()
+get_visual_selection = function()
   vim.cmd('noau normal! "vy"')
   return vim.fn.getreg('v')
 end
 
-function get_project_root()
+get_project_root = function()
   local wrap = function(text)
     return sep() .. text .. sep()
   end
@@ -26,14 +26,14 @@ function get_project_root()
   return vim.fn.fnamemodify(current_file, ':p:h:s?' .. wrap(src_dir) .. '.*?' .. wrap(src_dir) .. '?')
 end
 
-function get_build_target()
+get_build_target = function()
   local current_file_dir = vim.fn.expand('%:p:h')
   local current_file_from_google3_dir = vim.fn.fnamemodify(current_file_dir, ':s?.*google3/??')
   local current_file_name = vim.fn.expand('%:t:r')
   return '//' .. current_file_from_google3_dir .. ':' ..  current_file_name
 end
 
-function get_test_target()
+get_test_target = function()
   local build_target = get_build_target()
   if string.sub(build_target, -5) == '_test' then
     return build_target

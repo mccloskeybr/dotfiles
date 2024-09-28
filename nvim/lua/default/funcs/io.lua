@@ -1,4 +1,4 @@
-function file_exists(path)
+file_exists = function(path)
    local f=io.open(path,"r")
    if f~=nil then
      io.close(f)
@@ -8,14 +8,14 @@ function file_exists(path)
    end
 end
 
-function do_if_exists(path)
+do_if_exists = function(path)
   if file_exists(path) then
     dofile(path)
   end
 end
 
 -- maybe not as elegant as LFS but i don't want to install a lib for this lol
-function do_all_in_directory(dir)
+do_all_in_directory = function(dir)
   if file_exists(dir) then
     local p = io.popen('find "'.. dir ..'" -type f')
     for file in p:lines() do
