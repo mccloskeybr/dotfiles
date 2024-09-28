@@ -8,7 +8,8 @@ local sep = function(file_path)
 end
 
 return {
-  'mccloskeybr/related_files.nvim',
+  -- 'mccloskeybr/related_files.nvim',
+  dir = 'Z:/related_files.nvim',
   keys = {
     {
       '<Leader>r',
@@ -24,16 +25,16 @@ return {
         close_on_select = true,
         stop_on_first_hit = true,
       },
-      related = {
+      groups = {
 
         c_home = {
-          is_type = function(file_path)
+          is_in_group = function(file_path)
             if vim.g.profile ~= 'HOME' then return false end
             local _, _, ext = sep(file_path)
             if ext == '.c' or ext == '.h' then return true end
             return false
           end,
-          get_related = function(file_path)
+          get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
               dir .. name .. '.h',
@@ -43,13 +44,13 @@ return {
         },
 
         cpp_work = {
-          is_type = function(file_path)
+          is_in_group = function(file_path)
             if vim.g.profile ~= 'WORK' then return false end
             local _, _, ext = sep(file_path)
             if ext == '.cc' or ext == '.h' then return true end
             return false
           end,
-          get_related = function(file_path)
+          get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
               dir .. 'BUILD',
@@ -62,13 +63,13 @@ return {
         },
 
         proto_work = {
-          is_type = function(file_path)
+          is_in_group = function(file_path)
             if vim.g.profile ~= 'WORK' then return false end
             local _, _, ext = sep(file_path)
             if ext == '.proto' then return true end
             return false
           end,
-          get_related = function(file_path)
+          get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
               dir .. 'BUILD',
