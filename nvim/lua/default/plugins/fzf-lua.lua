@@ -1,6 +1,6 @@
 require('default.funcs.helpers')
 return {
-  "ibhagwan/fzf-lua",
+  'ibhagwan/fzf-lua',
   event = 'VimEnter',
   keys = {
     {
@@ -46,9 +46,16 @@ return {
         require('fzf-lua').oldfiles()
       end,
     },
+    {
+      '<Leader>fr',
+      mode = {'n'},
+      function()
+        require('fzf-lua').resume()
+      end,
+    },
   },
   config = function()
-    require("fzf-lua").setup({
+    require('fzf-lua').setup({
       file_ignore_patterns = { '%.orig$' },
       multiprocess = true,
       winopts = {
