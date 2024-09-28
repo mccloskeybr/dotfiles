@@ -38,8 +38,13 @@ vim.o.completeopt = 'menuone,noinsert,noselect,preview'
 vim.o.guicursor = 'n-v-c-i:block'
 
 vim.o.swapfile = false
-vim.o.undodir = os.getenv('HOME') .. '/.config/nvim/undo'
-vim.o.backupdir = os.getenv('HOME') .. '/.config/nvim/backup'
+if vim.g.os == 'LINUX' then
+  vim.o.undodir = os.getenv('HOME') .. '/.config/nvim/undo'
+  vim.o.backupdir = os.getenv('HOME') .. '/.config/nvim/backup'
+elseif vim.g.os == 'WINDOWS' then
+  vim.o.undodir = os.getenv('LOCALAPPDATA') .. '/nvim/undo'
+  vim.o.backupdir = os.getenv('LOCALAPPDATA') .. '/nvim/backup'
+end
 
 vim.api.nvim_create_augroup('highlight_yank', {
   clear = true,

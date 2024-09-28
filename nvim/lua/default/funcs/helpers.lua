@@ -1,3 +1,11 @@
+local function sep()
+  -- i hate windows!
+  if vim.g.os == 'WINDOWS' then
+    return '\\\\'
+  end
+  return '/'
+end
+
 -- https://www.reddit.com/r/neovim/comments/oo97pq/how_to_get_the_visual_selection_range/
 function get_visual_selection()
   vim.cmd('noau normal! "vy"')
@@ -5,9 +13,17 @@ function get_visual_selection()
 end
 
 function get_project_root()
+  local wrap = function(text)
+    return sep() .. text .. sep()
+  end
   local current_file = vim.fn.expand('%')
-  local project_root = vim.fn.fnamemodify(current_file, ':p:h:s?/croupier/.*?/croupier/?')
-  return project_root
+  local src_dir = ''
+  if vim.g.profile == 'WORK' then
+    src_dir = 'croupier'
+  elseif vim.g.profile == 'HOME' then
+    src_dir = 'src'
+  end
+  return vim.fn.fnamemodify(current_file, ':p:h:s?' .. wrap(src_dir) .. '.*?' .. wrap(src_dir) .. '?')
 end
 
 function get_build_target()
