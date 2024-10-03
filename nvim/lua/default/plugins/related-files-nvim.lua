@@ -58,8 +58,8 @@ return {
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
-              { filename = dir .. name .. '.h' },
-              { filename = dir .. name .. '.c' },
+              { filename = dir .. name .. '.h', text = 'header' },
+              { filename = dir .. name .. '.c', text = 'impl' },
             }
           end,
         },
