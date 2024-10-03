@@ -7,6 +7,27 @@ local sep = function(file_path)
   return string.match(file_path, '(.+[\\/])(.+[^%.])(%..+)$')
 end
 
+-- :help quickfix-window-function
+local format_func = function(info)
+	items = vim.fn.getloclist(0, { id = info[id], items = 1 }).items
+
+  -- find amount of padding required
+	longest = 0
+	for idx = info.start_idx, info.end_idx do
+	  label_len = string.len(items[idx].text)
+	  if longest < label_len then longest = label_len end
+  end
+
+	l = {}
+	for idx = info.start_idx, info.end_idx do
+	  label = items[idx].text
+	  label = label .. string.rep(' ', longest - string.len(label))
+	  file = vim.fn.fnamemodify(vim.fn.bufname(items[idx].bufnr), ':t')
+	  table.insert(l, label .. ' :: ' .. file)
+  end
+  return l
+end
+
 return {
   'mccloskeybr/related_files.nvim',
   keys = {
@@ -23,6 +44,7 @@ return {
       config = {
         close_on_select = true,
         stop_on_first_hit = true,
+        format_func = format_func,
       },
       groups = {
 
@@ -36,8 +58,8 @@ return {
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
-              dir .. name .. '.h',
-              dir .. name .. '.c',
+              { filename = dir .. name .. '.h' },
+              { filename = dir .. name .. '.c' },
             }
           end,
         },
@@ -51,12 +73,16 @@ return {
           end,
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
+
+            i = string.find(name, '_test')
+            if i ~= nil then name = string.sub(name, 1, i - 1) end
+
             return {
-              dir .. 'BUILD',
-              dir .. name .. '.h',
-              dir .. name .. '.cc',
-              dir .. name .. '_test.cc',
-              dir .. 'mock_' .. name .. '.cc',
+              { filename = dir .. 'BUILD', text = 'build' },
+              { filename = dir .. name .. '.h', text = 'header' },
+              { filename = dir .. name .. '.cc', text = 'impl' },
+              { filename = dir .. name .. '_test.cc', text = 'test' },
+              { filename = dir .. 'mock_' .. name .. '.cc', text = 'mock' },
             }
           end,
         },
@@ -71,8 +97,8 @@ return {
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
-              dir .. 'BUILD',
-              dir .. name .. '.proto',
+              { filename = dir .. 'BUILD' },
+              { filename = dir .. name .. '.proto' },
             }
           end,
         },

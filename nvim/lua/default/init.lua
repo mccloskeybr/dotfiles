@@ -1,4 +1,4 @@
-vim.g.profile = 'HOME'
+vim.g.profile = 'WORK'
 
 vim.g.os = 'LINUX'
 if vim.loop.os_uname().sysname == 'Windows_NT' then
