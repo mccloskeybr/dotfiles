@@ -64,6 +64,7 @@ return {
     },
   },
   config = function()
+    local actions = require('fzf-lua').actions
     require('fzf-lua').setup({
       file_ignore_patterns = { '%.orig$', '%.rpclog$' },
       multiprocess = true,
@@ -71,6 +72,11 @@ return {
         fullscreen = true,
         preview = {
           layout = 'vertical',
+        },
+      },
+      keymap = {
+        fzf = {
+          ['ctrl-q'] = 'select-all+accept', -- send to qflist
         },
       },
       files = { previewer = 'false' },
