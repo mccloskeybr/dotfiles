@@ -1,5 +1,9 @@
 require('default.funcs.io')
 
+vim.api.nvim_set_keymap('', ' ', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.o.encoding = 'utf-8'
 vim.o.termguicolors = true
 

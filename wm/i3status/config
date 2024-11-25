@@ -4,7 +4,10 @@ general {
 }
 
 order += "battery 0"
-order += "tztime local"
+order += "tztime nyc"
+order += "tztime la"
+order += "tztime kol"
+order += "tztime utc"
 
 battery 0 {
   format = "%status %percentage %remaining"
@@ -17,6 +20,22 @@ battery 0 {
   low_threshold = 10
 }
 
-tztime local {
-  format = "%Y-%m-%d %H:%M:%S"
+tztime nyc {
+  format = "%Y-%m-%d %H:%M:%S 🗽"
+  timezone = "America/New_York"
+}
+
+tztime la {
+  format = "%H:%M 🌉"
+  timezone = "America/Los_Angeles"
+}
+
+tztime kol {
+  format = "%H:%M 🕌"
+  timezone = "Asia/Kolkata"
+}
+
+tztime utc {
+  format = "%H:%M 🤖"
+  timezone = "Etc/UTC"
 }
