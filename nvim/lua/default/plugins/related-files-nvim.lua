@@ -1,7 +1,3 @@
-local file_exists = function(file_path)
-  return vim.fn.filereadable(file_path) == 1
-end
-
 -- dir1/dir2/file.ext --> (dir1/dir2/, file, ext)
 local sep = function(file_path)
   return string.match(file_path, '(.+[\\/])(.+[^%.])(%..+)$')
@@ -52,8 +48,7 @@ return {
           is_in_group = function(file_path)
             if vim.g.profile ~= 'HOME' then return false end
             local _, _, ext = sep(file_path)
-            if ext == '.c' or ext == '.h' then return true end
-            return false
+            return ext == '.c' or ext == '.h'
           end,
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
@@ -68,8 +63,7 @@ return {
           is_in_group = function(file_path)
             if vim.g.profile ~= 'WORK' then return false end
             local _, _, ext = sep(file_path)
-            if ext == '.cc' or ext == '.h' then return true end
-            return false
+            return ext == '.cc' or ext == '.h'
           end,
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
@@ -78,10 +72,10 @@ return {
             if i ~= nil then name = string.sub(name, 1, i - 1) end
 
             return {
-              { filename = dir .. 'BUILD', text = 'build' },
-              { filename = dir .. name .. '.h', text = 'header' },
-              { filename = dir .. name .. '.cc', text = 'impl' },
-              { filename = dir .. name .. '_test.cc', text = 'test' },
+              { filename = dir .. 'BUILD',                  text = 'build' },
+              { filename = dir .. name .. '.h',             text = 'header' },
+              { filename = dir .. name .. '.cc',            text = 'impl' },
+              { filename = dir .. name .. '_test.cc',       text = 'test' },
               { filename = dir .. 'mock_' .. name .. '.cc', text = 'mock' },
             }
           end,
@@ -91,14 +85,58 @@ return {
           is_in_group = function(file_path)
             if vim.g.profile ~= 'WORK' then return false end
             local _, _, ext = sep(file_path)
-            if ext == '.proto' then return true end
-            return false
+            return ext == '.proto'
           end,
           get_files_in_group = function(file_path)
             local dir, name, _ = sep(file_path)
             return {
-              { filename = dir .. 'BUILD' },
-              { filename = dir .. name .. '.proto' },
+              { filename = dir .. 'BUILD',          text = 'build' },
+              { filename = dir .. name .. '.proto', text = 'impl' },
+            }
+          end,
+        },
+
+        java_work = {
+          is_in_group = function(file_path)
+            if vim.g.profile ~= 'WORK' then return false end
+            local _, _, ext = sep(file_path)
+            return ext == '.java'
+          end,
+          get_files_in_group = function(file_path)
+            local prefix, postfix = string.match(file_path, '(.+)/java/(.+)$')
+            if prefix == nil then
+              prefix, postfix = string.match(file_path, '(.+)/javatests/(.+)$')
+            end
+
+            local dir, name, ext = sep(postfix)
+            i = string.find(name, 'Test')
+            if i ~= nil then name = string.sub(name, 1, i - 1) end
+
+            return {
+              { filename = prefix .. '/java/' .. dir .. 'BUILD',                  text = 'impl build' },
+              { filename = prefix .. '/java/' .. dir .. name .. '.java',          text = 'impl' },
+              { filename = prefix .. '/javatests/' .. dir .. 'BUILD',             text = 'test build' },
+              { filename = prefix .. '/javatests/' .. dir .. name .. 'Test.java', text = 'test' },
+            }
+          end,
+        },
+
+        py_work = {
+          is_in_group = function(file_path)
+            if vim.g.profile ~= 'WORK' then return false end
+            local _, _, ext = sep(file_path)
+            return ext == '.py'
+          end,
+          get_files_in_group = function(file_path)
+            local dir, name, _ = sep(file_path)
+
+            i = string.find(name, '_test')
+            if i ~= nil then name = string.sub(name, 1, i - 1) end
+
+            return {
+              { filename = dir .. 'BUILD',            text = 'build' },
+              { filename = dir .. name .. '.py',      text = 'impl' },
+              { filename = dir .. name .. '_test.py', text = 'test' },
             }
           end,
         },
