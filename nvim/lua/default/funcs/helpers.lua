@@ -19,7 +19,7 @@ get_project_root = function()
   local current_file = vim.fn.expand('%')
   local src_dir = ''
   if vim.g.profile == 'WORK' then
-    src_dir = 'croupier'
+    src_dir = 'jarvis'
   elseif vim.g.profile == 'HOME' then
     src_dir = 'src'
   end

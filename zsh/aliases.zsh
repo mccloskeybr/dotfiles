@@ -1,4 +1,5 @@
 alias ll='ls -alF'
+alias dir='ls -alF' # windows sadge
 alias la='ls -A'
 alias l='ls -CF'
 alias mv='mv -i'
@@ -10,5 +11,3 @@ alias h='hg'
 alias v='nvim'
 alias vm='vim --clean'
 alias cdot='cd ~/.dotfiles'
-
-alias gchat='exec google-chrome --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi'
