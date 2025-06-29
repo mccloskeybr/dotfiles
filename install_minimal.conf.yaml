@@ -11,18 +11,10 @@
 
 - link:
     ~/.config/nvim: nvim
-    ~/.config/alacritty: alacritty
-    ~/.config/i3: wm/i3
-    ~/.config/i3status: wm/i3status
-    ~/.config/dunst: wm/dunst
     ~/.zshrc: zsh/zshrc
     ~/.zsh: zsh
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
-    ~/.hgrc: hg/hgrc
-    ~/.hg: hg
-    ~/wallpaper: wallpaper
-    ~/.fehbg: wm/feh/fehbg
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

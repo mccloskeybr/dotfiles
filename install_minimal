@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 set -e
-echo "Installing FULL dotfile setup."
-CONFIG="install.conf.yaml"
+echo "Installing MINIMAL dotfile setup."
+CONFIG="install_minimal.conf.yaml"
 DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

@@ -18,15 +18,9 @@
   path = dotbot
   url = https://github.com/anishathalye/dotbot
   ignore = dirty
-[submodule "alacritty/fonts/nerd-fonts"]
-  path = alacritty/fonts/nerd-fonts
-  url = https://github.com/ryanoasis/nerd-fonts
 [submodule "bin/pokemon-colorscripts"]
-	path = bin/pokemon-colorscripts
-	url = https://gitlab.com/phoneybadger/pokemon-colorscripts.git
-[submodule "spicetify/spicetify-cli"]
-	path = spicetify/spicetify-cli
-	url = https://github.com/spicetify/spicetify-cli
+  path = bin/pokemon-colorscripts
+  url = https://gitlab.com/phoneybadger/pokemon-colorscripts.git
 [submodule "bin/cutefetch"]
-	path = bin/cutefetch
-	url = https://github.com/cybardev/cutefetch
+  path = bin/cutefetch
+  url = https://github.com/cybardev/cutefetch
