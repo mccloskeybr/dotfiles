@@ -3,7 +3,6 @@ return {
   commit = '9637670896b68805430e2f72cf5d16be5b97a22a',
   event = 'VeryLazy',
   opts = {
-    show_current_context = true,
     char_space_blankline = ' ',
     char_highlight_list = { 'LineNr' },
   },
